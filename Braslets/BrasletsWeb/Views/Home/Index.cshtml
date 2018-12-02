@@ -1,0 +1,36 @@
+﻿@model BrasletsWeb.Models.HomeModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Set the size of the div element that contains the map */
+    #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+</style>
+
+<h2>@Model.Braslets[0].Name</h2>
+<h2>Широта @Model.Braslets[0].Latutude</h2>
+<h2>Долгота @Model.Braslets[0].Longitude</h2>
+<h2>Сердце @Model.Braslets[0].Heartbeat</h2>
+
+<div id="map"></div>
+
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: @Model.Braslets[0].Latutude, lng: @Model.Braslets[0].Longitude};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 18, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
+</script>
