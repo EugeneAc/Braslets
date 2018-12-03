@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\LocationInfoModel.cs" />
     <Compile Include="Models\HealthInfoModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceConstrants.cs" />
     <Compile Include="Service\RestFetcher.cs" />

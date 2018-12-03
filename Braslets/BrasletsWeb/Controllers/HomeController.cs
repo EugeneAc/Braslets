@@ -1,5 +1,4 @@
 ﻿using BrasletsService.Service;
-using BrasletsWeb.Hubs;
 using BrasletsWeb.Models;
 using System;
 using System.Collections.Generic;
@@ -21,16 +20,16 @@ namespace BrasletsWeb.Controllers
             var model = new HomeModel();
             model.Braslets = new List<BrasletModel>();
             var brasletModel = new BrasletModel();
-            if (coordinates != null && coordinates.Count() > 11)
+            if (coordinates != null)
             {
-                brasletModel.Latutude = coordinates[11];
-                brasletModel.Longitude = coordinates[12];
-                brasletModel.Name = coordinates[0];
+                brasletModel.Latutude = coordinates.OLat;
+                brasletModel.Longitude = coordinates.OLng;
+                brasletModel.Name = coordinates.DeviceName;
             }
 
             if (healthData != null)
             {
-                brasletModel.Heartbeat = healthData.FirstOrDefault().Heartbeat;
+                brasletModel.Heartbeat = healthData.Heartbeat;
             }
 
             model.Braslets.Add(brasletModel);
@@ -52,13 +51,5 @@ namespace BrasletsWeb.Controllers
             return View();
         }
 
-        private void SendMessage(string tag , string value)
-        {
-            // Получаем контекст хаба
-            var context =
-                Microsoft.AspNet.SignalR.GlobalHost.ConnectionManager.GetHubContext<BrasletHub>();
-            // отправляем сообщение
-            context.Clients.All.addMessage(tag , value);
-        }
     }
 }

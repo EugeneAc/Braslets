@@ -10,7 +10,7 @@ namespace BrasletsWeb.Models
         public string Name { get; set; }
         public string Latutude { get; set; }
         public string Longitude { get; set; }
-        public int Heartbeat { get; set; }
+        public string Heartbeat { get; set; }
     }
 
     public class HomeModel

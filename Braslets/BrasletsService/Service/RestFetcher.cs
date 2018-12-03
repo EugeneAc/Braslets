@@ -24,23 +24,23 @@ namespace BrasletsService.Service
             _restClient = new RestClient(ServiceConstrants.BaseUrl); ;
         }
 
-        public string[] FetchLocationData(string authCookie)
+        public LocationInfoModel FetchLocationData(string authCookie, string deviceId = "34184F1854385617")
         {
-            var request = new RestRequest("Device/DeviceLocationInfoByUserIdGroup", Method.POST);
-            request.AddParameter("UserId", "1965491"); // adds to POST or URL querystring based on Method
+            var request = new RestRequest("/Apply/DeviceLocationInfo", Method.POST);
+            request.AddParameter("deviceId", deviceId); // adds to POST or URL querystring based on Method
             request.AddCookie(".AspNet.ApplicationCookie", authCookie);
             // execute the request
-            var response = _restClient.Execute <List<string>>(request);
-            return response.Data?.Select(s=>s.TrimStart(new char[]{'|','|','[' }).TrimEnd(']')).ToArray().FirstOrDefault().Split('|');
+            var response = _restClient.Execute<LocationInfoModel>(request);
+            return response.Data;
         }
 
-        public List<HealthInfoModel> FetchHealhData(string authCookie)
+        public PersonModel FetchHealhData(string authCookie, string deviceId = "34184F1854385617")
         {
-            var request = new RestRequest("/Apply/GetHeartbeatInfo", Method.POST);
-            request.AddParameter("imei", "357771807000302"); // adds to POST or URL querystring based on Method
+            var request = new RestRequest("/Apply/Getperson", Method.POST);
+            request.AddParameter("deviceId", deviceId); // adds to POST or URL querystring based on Method
             request.AddCookie(".AspNet.ApplicationCookie", authCookie);
             // execute the request
-            var response = _restClient.Execute<List<HealthInfoModel>>(request);
+            var response = _restClient.Execute<PersonModel>(request);
             return response.Data;
         }
 
