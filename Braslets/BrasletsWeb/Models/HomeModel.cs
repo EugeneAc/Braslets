@@ -11,6 +11,8 @@ namespace BrasletsWeb.Models
         public string Latutude { get; set; }
         public string Longitude { get; set; }
         public string Heartbeat { get; set; }
+        public int Steps { get; set; }
+        public bool SosAlarm { get; set; }
     }
 
     public class HomeModel

@@ -10,29 +10,35 @@ namespace BrasletsWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private string[] devices = new[] {"34184F1854385617", "635DD7499A9C60EA"};
         public ActionResult Index()
         {
             var service = RestFetcher.Instance;
             var authCookie = service.Authorize();
-            var coordinates = service.FetchLocationData(authCookie);
-            var healthData = service.FetchHealhData(authCookie);
-            
             var model = new HomeModel();
             model.Braslets = new List<BrasletModel>();
-            var brasletModel = new BrasletModel();
-            if (coordinates != null)
+            foreach (var device in devices)
             {
-                brasletModel.Latutude = coordinates.OLat;
-                brasletModel.Longitude = coordinates.OLng;
-                brasletModel.Name = coordinates.DeviceName;
-            }
+                var coordinates = service.FetchLocationData(authCookie, device);
+                var healthData = service.FetchHealhData(authCookie, device);
+                var alarmData = service.GetAlarmData(authCookie, device);
 
-            if (healthData != null)
-            {
-                brasletModel.Heartbeat = healthData.Heartbeat;
-            }
+                var brasletModel = new BrasletModel();
+                if (coordinates != null)
+                {
+                    brasletModel.Latutude = coordinates.OLat;
+                    brasletModel.Longitude = coordinates.OLng;
+                    brasletModel.Name = coordinates.DeviceName;
+                }
 
-            model.Braslets.Add(brasletModel);
+                if (healthData != null)
+                {
+                    brasletModel.Heartbeat = healthData.Heartbeat;
+                    brasletModel.Steps = healthData.Steps;
+                }
+
+                model.Braslets.Add(brasletModel);
+            }
 
             return View(model);
         }

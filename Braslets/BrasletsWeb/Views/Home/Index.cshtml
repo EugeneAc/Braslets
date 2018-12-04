@@ -4,33 +4,63 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    /* Set the size of the div element that contains the map */
-    #map {
-        height: 400px; /* The height is 400 pixels */
-        width: 100%; /* The width is the width of the web page */
-    }
-</style>
 
-<h2>@Model.Braslets[0].Name</h2>
-<h2>Широта @Model.Braslets[0].Latutude</h2>
-<h2>Долгота @Model.Braslets[0].Longitude</h2>
-<h2>Сердце @Model.Braslets[0].Heartbeat</h2>
+<table class="table">
 
-<div id="map"></div>
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Широта</th>
+        <th scope="col">Долгота</th>
+        <th scope="col">Пульс</th>
+        <th scope="col">Шаги</th>
+        <th scope="col">SOS</th>
+    </tr>
+    </thead>
 
-<script>
+    <tbody>
+        @foreach (var braslet in Model.Braslets)
+        {
+        <tr>
+            <th scope="row">1</th>
+            <td>@braslet.Name</td>
+            <td>@braslet.Latutude</td>
+            <td>@braslet.Longitude</td>
+            <td>@braslet.Heartbeat</td>
+            <td>@braslet.Steps</td>
+            <td>@braslet.SosAlarm</td>
+        </tr>
+        }
+        </tbody>
+    </table>
+
+    <div id="map"></div>
+
+    <script>
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: @Model.Braslets[0].Latutude, lng: @Model.Braslets[0].Longitude};
-  // The map, centered at Uluru
+  // The location of braslets
+        var braslet1 = { lat: @Model.Braslets[0].Latutude, lng: @Model.Braslets[0].Longitude};
+        var braslet2 = {lat: @Model.Braslets[1].Latutude, lng: @Model.Braslets[1].Longitude};
+  // The map, centered at braslet1
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 18, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+      document.getElementById('map'), { zoom: 18, center: braslet1});
+  // The marker, positioned at braslet1
+    var marker1 = new google.maps.Marker({
+        position: braslet1,
+        map: map,
+        title: '@Model.Braslets[0].Name.Trim()',
+        label: '@Model.Braslets[0].Name.Trim()[0]'
+    });
+    var marker2 = new google.maps.Marker({
+        position: braslet2,
+        map: map,
+        title: '@Model.Braslets[1].Name.Trim()',
+        label: '@Model.Braslets[1].Name.Trim()[0]'
+    });
 }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
-</script>
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
+    </script>

@@ -44,17 +44,27 @@ namespace BrasletsService.Service
             return response.Data;
         }
 
+        public List<AlarmModel> GetAlarmData(string authCookie, string deviceId = "34184F1854385617")
+        {
+            var request = new RestRequest("/Apply/ExceptionPage", Method.POST);
+            request.AddParameter("deviceId", deviceId); // adds to POST or URL querystring based on Method
+            request.AddCookie(".AspNet.ApplicationCookie", authCookie);
+            // execute the request
+            var response = _restClient.Execute<List<AlarmModel>>(request);
+            return response.Data;
+        }
+
         public string Authorize()
         {
             MemoryCache memoryCache = MemoryCache.Default;
-            if (memoryCache.Contains("AuthCookie"))
+            if (memoryCache.Contains("AuthCookie" + ServiceConstrants.AccountLogin + ServiceConstrants.AccountPassword))
             {
                return memoryCache.Get("AuthCookie").ToString();
             }
 
             var request = new RestRequest(@"Login/SignIn", Method.POST);
-            request.AddParameter("txtUserName", "ctigran"); // adds to POST or URL querystring based on Method
-            request.AddParameter("txtUserPassword", "dream666");
+            request.AddParameter("txtUserName", ServiceConstrants.AccountLogin); // adds to POST or URL querystring based on Method
+            request.AddParameter("txtUserPassword", ServiceConstrants.AccountPassword);
             request.AddParameter("txtTimeOffset", "6");
             request.AddParameter("loginType", "0");
             request.AddParameter("loginLan", "en-us");
