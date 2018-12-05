@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BrasletsService.Models;
 
 namespace BrasletsWeb.Models
 {
     public class BrasletModel
     {
-        public string Name { get; set; }
-        public string Latutude { get; set; }
-        public string Longitude { get; set; }
-        public string Heartbeat { get; set; }
-        public int Steps { get; set; }
-        public bool SosAlarm { get; set; }
+        public LocationInfoModel LocationInfo { get; set; }
+        public PersonModel Person { get; set; }
+        public List<AlarmModel> Alarms { get; set; }
     }
 
     public class HomeModel

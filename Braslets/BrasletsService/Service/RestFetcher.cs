@@ -24,6 +24,16 @@ namespace BrasletsService.Service
             _restClient = new RestClient(ServiceConstrants.BaseUrl); ;
         }
 
+        public HttpStatusCode ClearAlarm(string authCookie, string alarmId)
+        {
+            var request = new RestRequest("/Exception/ClearException", Method.POST);
+            request.AddParameter("id", alarmId); // adds to POST or URL querystring based on Method
+            request.AddCookie(".AspNet.ApplicationCookie", authCookie);
+            // execute the request
+            var response = _restClient.Execute(request);
+            return response.StatusCode;
+        }
+
         public LocationInfoModel FetchLocationData(string authCookie, string deviceId = "34184F1854385617")
         {
             var request = new RestRequest("/Apply/DeviceLocationInfo", Method.POST);
