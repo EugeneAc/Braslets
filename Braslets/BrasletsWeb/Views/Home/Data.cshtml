@@ -1,0 +1,125 @@
+﻿@model BrasletsWeb.Models.HomeModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="center-side container" style="width: calc(100% - 250px)">
+    <div class="col-md-6 trevogi" style="margin: 20px; background-color: white;">
+        <h2>Геолокация</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Имя</th>
+                <th scope="col">Устройство</th>
+                <th scope="col">Широта</th>
+                <th scope="col">Долгота</th>
+                <th scope="col">Скорость</th>
+                <th scope="col">Время отправки инфо</th>
+                <th scope="col">Время получения инфо</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            @foreach (var braslet in Model.Braslets)
+            {
+
+                <tr>
+                    <td>@braslet.LocationInfo.DeviceName</td>
+                    <td>@braslet.LocationInfo.ModelName</td>
+                    <td>@braslet.LocationInfo.OLat</td>
+                    <td>@braslet.LocationInfo.OLng</td>
+                    <td>@braslet.LocationInfo.Speed</td>
+                    <td>@braslet.LocationInfo.DeviceUtcDate.ToLocalTime()</td>
+                    <td>@braslet.LocationInfo.ServerUtcDate.ToLocalTime()</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+
+        <h2>Биометрика</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Пульс</th>
+                <th scope="col">Шаги</th>
+                <th scope="col">Давление</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            @foreach (var braslet in Model.Braslets)
+            {
+
+                <tr>
+                    <td>@braslet.Person.Heartbeat</td>
+                    <td>@braslet.Person.Steps</td>
+                    <td>@braslet.Person.Diastolic/@braslet.Person.Shrink</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-5 trevogi" style="margin: 20px; background-color: white; float: right">
+    @foreach (var braslet in Model.Braslets)
+    {
+        if (braslet.Alarms != null)
+        {
+            <h2>Алармы устройсва @braslet.LocationInfo.DeviceName (@braslet.LocationInfo.ModelName)</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Тип аларма (англ)</th>
+                        <th scope="col">Время обнаружения</th>
+                        <th scope="col">Время инициации</th>
+                        <th scope="col">Сброс</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var alarm in braslet.Alarms.OrderByDescending(t => t.ExceptionTime))
+                    {
+
+                        <tr>
+                            <td>@alarm.ExceptionType</td>
+                            <td>@alarm.ExceptionTime.ToLocalTime()</td>
+                            <td>@alarm.LocatingTime.ToLocalTime()</td>
+                            <td><input type="button" name="EditButton" class="btn btn-primary btn-xs" value="Сброс" onclick="location.href='@Url.Action("ClearAlarm", "Home", new { alarmID = alarm.ExceptionId })'" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+    </div>
+    <div id="map" class="trevogi"></div>
+
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of braslets
+        var braslet1 = { lat: @Model.Braslets[0].LocationInfo.OLat, lng: @Model.Braslets[0].LocationInfo.OLng};
+        var braslet2 = {lat: @Model.Braslets[1].LocationInfo.OLat, lng: @Model.Braslets[1].LocationInfo.OLng};
+  // The map, centered at braslet1
+  var map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 18, center: braslet1});
+  // The marker, positioned at braslet1
+    var marker1 = new google.maps.Marker({
+        position: braslet1,
+        map: map,
+        title: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()[0]'
+    });
+    var marker2 = new google.maps.Marker({
+        position: braslet2,
+        map: map,
+        title: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()[0]'
+    });
+}
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
+    </script>
+</div>

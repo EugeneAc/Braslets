@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eSafe</title>
+    <link href="jquery.formstyler.css" rel="stylesheet" />
+    <link href="jquery.formstyler.theme.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.formstyler.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+                $('#styled-select select').styler({
+                    selectSearch: true,
+                });
+            });
+        })(jQuery);
+    </script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div id="full-body">
+    <div id="header">
+        <table id="logo">
+            <tr><td><img src="img/logo.png"><br>
+            Мониторинг и позиционирование персонала
+                <div id="styled-select">
+                    <select>
+                        <option value="ru">РУС</option>
+                        <option value="en">Eng</option>
+                        <option value="kz">Kz</option>
+                    </select>
+                </div>
+            </td></tr>
+        </table>
+        <table id="calendar">
+            <tr><td>
+                <img src="img/calendar.png">
+            </td>
+            <td>
+                <div class="top-calendar">
+                    10.10.2018
+                </div>
+                <div class="bottom-calendar">
+                    c 00:00:00 по 16.43.55
+                </div>
+            </td>
+            </tr>
+        </table>
+        <table id="user">
+            <tr><td>
+                <img src="img/user.png">
+            </td>
+                <td>
+                    <div class="top-user">
+                        Пользователь:
+                    </div>
+                    <div class="bottom-user">
+                        Константин Константинопольский
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table id="logo2">
+            <tr>
+                <td id="logo2-title">Соколовско-Сарбайское<br>
+                    горно-обогатительное <br>
+                    производственное объединение</td>
+                <td id="logo2-img">
+                    <div id="logo-img-2"><img src="img/logo2.png"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="nav-dot">
+        Главная
+    </div>
+<div id="main-block-line">
+<div id="aside-left">
+    <a href="index.html"><div class="nav-item active">
+        <div class="nav-img"><img class="img-1" src="img/img-1.png"> <img class="img-2" src="img/img-1-white.png"></div>
+        <div class="nav-title">главная</div>
+    </div></a>
+    <a href="analytics.html"> <div class="nav-item">
+        <div class="nav-img"><img class="img-1" src="img/img-2.png"> <img class="img-2"  src="img/img-2-white.png"></div>
+        <div class="nav-title">аналитика</div>
+    </div></a>
+    <div class="nav-item">
+        <div class="nav-img"><img src="img/img-3.png"></div>
+        <div class="nav-title">маршруты</div>
+    </div>
+    <div class="nav-item">
+        <div class="nav-img"><img src="img/img-4.png"></div>
+        <div class="nav-title">инциденты тб</div>
+    </div>
+    <div class="nav-item">
+        <div class="nav-img"><img src="img/img-5.png"></div>
+        <div class="nav-title">здоровье</div>
+    </div>
+    <div class="nav-item">
+        <div class="nav-img"><img src="img/img-6.png"></div>
+        <div class="nav-title">отчеты</div>
+    </div>
+    <div class="nav-item">
+        <div class="nav-img"><img src="img/img-7.png"></div>
+        <div class="nav-title">справочники</div>
+    </div>
+</div>
+<div id="center-side">
+<div class="center-item">
+    <div class="item-title-wrap">
+
+        <div class="center-item-title">
+            офис ссгпо
+        </div>
+        <div class="item-title-img">
+            <img class="center-item-img" src="img/item-img-2.png">
+        </div>
+    </div>
+
+    <div class="mistakes">
+        <div class="mistakes-count">
+            8
+        </div>
+        <div class="mistakes-title">
+            нарушений за 1000 часов
+        </div>
+    </div>
+    <div class="processes">
+        <div class="one-process">
+            <div class="name-process">
+                В работе
+            </div>
+            <div class="amount-process">
+                927 <span class="gray-process">/ 1200</span>
+            </div>
+        </div>
+        <div class="one-process">
+            <div class="name-process">
+                Нарушений
+            </div>
+            <div class="amount-process">
+                99
+            </div>
+        </div>
+        <div class="one-process">
+            <div class="name-process">
+Показатель ТБ
+            </div>
+            <div class="amount-process">
+96%
+            </div>
+        </div>
+        <div class="one-process">
+            <div class="name-process">
+Продуктивность
+            </div>
+            <div class="amount-process">
+92%
+            </div>
+        </div>
+        <div class="total-process">
+            <div class="total-name">
+Общий показатель:
+            </div>
+            <div class="total-amount red">
+                <img src="img/arr-down-red.png"> 96%
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="center-item">
+        <div class="item-title-wrap">
+
+        <div class="center-item-title">
+            промбаза ссгпо
+        </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+            </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                12
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount green">
+                    <img src="img/arr-up-green.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
+
+            <div class="center-item-title">
+                оф-центральная
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                5
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
+
+            <div class="center-item-title">
+                сарбайский карьер
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                8
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
+
+        <div class="center-item-title">
+            куржун <img width="1" height="1" />кульский карьер
+        </div>
+        <div class="item-title-img">
+            <img class="center-item-img" src="img/item-img-4.png">
+        </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                8
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="aside-right">
+    <div id="common-information">
+        <div id="comminf-title">
+            общая информация
+        </div>
+        <div id="common-mistakes">
+            <span class="commist-span">нарушения по предприятию </span><br><span class="common-red">42</span><br><span class="commist-span">на 1000 часов</span>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-1.png">
+            </div>
+            <div class="common-table-td">
+                В работе<br>
+                <span class="common-numbers">927 <span class="common-gray">/1200</span></span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-2.png">
+            </div>
+            <div class="common-table-td">
+                Показатель ТБ<br>
+                <span class="common-numbers">96%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-3.png">
+            </div>
+            <div class="common-table-td">
+                Опоздания<br>
+                <span class="common-numbers">10%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-4.png">
+            </div>
+            <div class="common-table-td">
+                Продуктивность<br>
+                <span class="common-numbers">92%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-5.png">
+            </div>
+            <div class="common-table-td">
+                Нахождение в работе<br>
+                <span class="common-numbers">40%</span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>

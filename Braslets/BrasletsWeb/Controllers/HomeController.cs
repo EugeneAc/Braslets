@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using BrasletsService.Models;
 
 namespace BrasletsWeb.Controllers
@@ -14,7 +15,7 @@ namespace BrasletsWeb.Controllers
     {
         private string[] devices = new[] {"34184F1854385617", "635DD7499A9C60EA"};
         private string _authCookie;
-        public ActionResult Index()
+        public ActionResult Data()
         {
             var service = RestFetcher.Instance;
             _authCookie = service.Authorize();
@@ -48,6 +49,7 @@ namespace BrasletsWeb.Controllers
                 model.Braslets.Add(brasletModel);
             }
 
+            ViewBag.DataActive = "active";
             return View(model);
         }
 
@@ -58,17 +60,21 @@ namespace BrasletsWeb.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult About()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.IndexActive = "active";
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Analytics()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.AnalyticActive = "active";
+            return View();
+        }
 
+        public ActionResult Select()
+        {
+            
             return View();
         }
 

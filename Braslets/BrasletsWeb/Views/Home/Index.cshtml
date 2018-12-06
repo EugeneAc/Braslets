@@ -1,121 +1,368 @@
-﻿@model BrasletsWeb.Models.HomeModel
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Геолокация</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Имя</th>
-            <th scope="col">Устройство</th>
-            <th scope="col">Широта</th>
-            <th scope="col">Долгота</th>
-            <th scope="col">Скорость</th>
-            <th scope="col">Время отправки инфо</th>
-            <th scope="col">Время получения инфо</th>
-        </tr>
-    </thead>
 
-    <tbody>
-        @foreach (var braslet in Model.Braslets)
-        {
+<div id="center-side">
+    <div class="center-item">
+        <div class="item-title-wrap">
 
-            <tr>
-                <td>@braslet.LocationInfo.DeviceName</td>
-                <td>@braslet.LocationInfo.ModelName</td>
-                <td>@braslet.LocationInfo.OLat</td>
-                <td>@braslet.LocationInfo.OLng</td>
-                <td>@braslet.LocationInfo.Speed</td>
-                <td>@braslet.LocationInfo.DeviceUtcDate.ToLocalTime()</td>
-                <td>@braslet.LocationInfo.ServerUtcDate.ToLocalTime()</td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <div class="center-item-title">
+                офис ссгпо
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
 
+        <div class="mistakes">
+            <div class="mistakes-count">
+                8
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-down-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
 
-<h2>Биометрика</h2>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Пульс</th>
-        <th scope="col">Шаги</th>
-        <th scope="col">Давление</th>
-    </tr>
-    </thead>
+            <div class="center-item-title">
+                промбаза ссгпо
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                12
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount green">
+                    <img src="img/arr-up-green.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
 
-    <tbody>
-    @foreach (var braslet in Model.Braslets)
-    {
+            <div class="center-item-title">
+                оф-центральная
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                5
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
 
-        <tr>
-            <td>@braslet.Person.Heartbeat</td>
-            <td>@braslet.Person.Steps</td>
-            <td>@braslet.Person.Diastolic/@braslet.Person.Shrink</td>
-        </tr>
-    }
-    </tbody>
-</table>
+            <div class="center-item-title">
+                сарбайский карьер
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-2.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                8
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-item">
+        <div class="item-title-wrap">
 
-@foreach (var braslet in Model.Braslets)
-{
-    if (braslet.Alarms != null)
-    { 
-    <h2>Алармы устройсва @braslet.LocationInfo.DeviceName (@braslet.LocationInfo.ModelName)</h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Тип аларма (англ)</th>
-                <th scope="col">Время обнаружения</th>
-                <th scope="col">Время инициации</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
+            <div class="center-item-title">
+                куржун <img width="1" height="1" />кульский карьер
+            </div>
+            <div class="item-title-img">
+                <img class="center-item-img" src="img/item-img-4.png">
+            </div>
+        </div>
+        <div class="mistakes">
+            <div class="mistakes-count">
+                8
+            </div>
+            <div class="mistakes-title">
+                нарушений за 1000 часов
+            </div>
+        </div>
+        <div class="processes">
+            <div class="one-process">
+                <div class="name-process">
+                    В работе
+                </div>
+                <div class="amount-process">
+                    927 <span class="gray-process">/ 1200</span>
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Нарушений
+                </div>
+                <div class="amount-process">
+                    99
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Показатель ТБ
+                </div>
+                <div class="amount-process">
+                    96%
+                </div>
+            </div>
+            <div class="one-process">
+                <div class="name-process">
+                    Продуктивность
+                </div>
+                <div class="amount-process">
+                    92%
+                </div>
+            </div>
+            <div class="total-process">
+                <div class="total-name">
+                    Общий показатель:
+                </div>
+                <div class="total-amount red">
+                    <img src="img/arr-up-red.png"> 96%
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="aside-right">
+    <div id="common-information">
+        <div id="comminf-title">
+            общая информация
+        </div>
+        <div id="common-mistakes">
+            <span class="commist-span">нарушения по предприятию </span><br><span class="common-red">42</span><br><span class="commist-span">на 1000 часов</span>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-1.png">
+            </div>
+            <div class="common-table-td">
+                В работе<br>
+                <span class="common-numbers">927 <span class="common-gray">/1200</span></span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-2.png">
+            </div>
+            <div class="common-table-td">
+                Показатель ТБ<br>
+                <span class="common-numbers">96%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-3.png">
+            </div>
+            <div class="common-table-td">
+                Опоздания<br>
+                <span class="common-numbers">10%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-4.png">
+            </div>
+            <div class="common-table-td">
+                Продуктивность<br>
+                <span class="common-numbers">92%</span>
+            </div>
+        </div>
+        <div class="common-table">
+            <div class="common-table-img">
+                <img src="img/comm-5.png">
+            </div>
+            <div class="common-table-td">
+                Нахождение в работе<br>
+                <span class="common-numbers">40%</span>
+            </div>
+        </div>
+    </div>
 
-            <tbody>
-            @foreach (var alarm in braslet.Alarms.OrderByDescending(t=>t.ExceptionTime))
-            {
-
-                <tr>
-                    <td>@alarm.ExceptionType</td>
-                    <td>@alarm.ExceptionTime.ToLocalTime()</td>
-                    <td>@alarm.LocatingTime.ToLocalTime()</td>
-                    <td><input type="button" name="EditButton" class="btn btn-primary btn-xs" value="Сброс" onclick="location.href='@Url.Action("ClearAlarm", "Home", new { alarmID = alarm.ExceptionId })'" /></td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    }
-}
-
-<div id="map"></div>
-
-<script>
-// Initialize and add the map
-function initMap() {
-  // The location of braslets
-        var braslet1 = { lat: @Model.Braslets[0].LocationInfo.OLat, lng: @Model.Braslets[0].LocationInfo.OLng};
-        var braslet2 = {lat: @Model.Braslets[1].LocationInfo.OLat, lng: @Model.Braslets[1].LocationInfo.OLng};
-  // The map, centered at braslet1
-  var map = new google.maps.Map(
-      document.getElementById('map'), { zoom: 18, center: braslet1});
-  // The marker, positioned at braslet1
-    var marker1 = new google.maps.Marker({
-        position: braslet1,
-        map: map,
-        title: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()',
-        label: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()[0]'
-    });
-    var marker2 = new google.maps.Marker({
-        position: braslet2,
-        map: map,
-        title: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()',
-        label: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()[0]'
-    });
-}
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
-</script>
+</div>

@@ -15,6 +15,12 @@ namespace BrasletsWeb
 
             routes.MapRoute(
                 name: "Default",
+                url: "{action}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "controllerRouute",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

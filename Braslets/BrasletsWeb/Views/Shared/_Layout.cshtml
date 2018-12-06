@@ -1,42 +1,131 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Bracelet Tracker</title>
+    <meta charset="UTF-8">
+    <title>eSafe</title>
+    <link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
+    <link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
+    <link href="~/Content/index.css" rel="stylesheet">
+    <link href="~/Content/analytics.css" rel="stylesheet">
+    <script src="~/Content/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/jquery.formstyler.js"></script>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <script>
+        (function ($) {
+            $(function () {
+                $('#styled-select select').styler({
+                    selectSearch: true,
+                });
+            });
+        })(jQuery);
+    </script>
+    <script src="~/Content/main.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Bracelet Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="full-body">
+        <div id="header">
+            <table id="logo">
+                <tr>
+                    <td>
+                        <img src="img/logo.png"><br>
+                        Мониторинг и позиционирование персонала
+                        <div id="styled-select">
+                            <select>
+                                <option value="ru">РУС</option>
+                                <option value="en">Eng</option>
+                                <option value="kz">Kz</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table id="calendar">
+                <tr>
+                    <td>
+                        <img src="img/calendar.png">
+                    </td>
+                    <td>
+                        <div class="top-calendar">
+                            10.10.2018
+                        </div>
+                        <div class="bottom-calendar">
+                            c 00:00:00 по 16.43.55
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table id="user">
+                <tr>
+                    <td>
+                        <img src="img/user.png">
+                    </td>
+                    <td>
+                        <div class="top-user">
+                            Пользователь:
+                        </div>
+                        <div class="bottom-user">
+                            Константин Константиновский
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table id="logo2">
+                <tr>
+                    <td id="logo2-title">
+                        Соколовско-Сарбайское<br>
+                        горно-обогатительное <br>
+                        производственное объединение
+                    </td>
+                    <td id="logo2-img">
+                        <div id="logo-img-2"><img src="img/logo2.png"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="nav-dot">
+            
+        </div>
+        <div id="main-block-line">
+        <div id="aside-left">
+            <a href="index">
+                <div class="nav-item @ViewBag.IndexActive">
+                    <div class="nav-img"><img class="img-1" src="img/img-1.png"> <img class="img-2" src="img/img-1-white.png"></div>
+                    <div class="nav-title">главная</div>
+                </div>
+            </a>
+            <a href="analytics">
+                <div class="nav-item @ViewBag.AnalyticActive">
+                    <div class="nav-img"><img class="img-1" src="img/img-2.png"> <img class="img-2" src="img/img-2-white.png"></div>
+                    <div class="nav-title">аналитика</div>
+                </div>
+            </a>
+            <div class="nav-item">
+                <div class="nav-img"><img src="img/img-3.png"></div>
+                <div class="nav-title">маршруты</div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <div class="nav-item">
+                <div class="nav-img"><img src="img/img-4.png"></div>
+                <div class="nav-title">инциденты тб</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-img"><img src="img/img-5.png"></div>
+                <div class="nav-title">здоровье</div>
+            </div>
+            <a href="Data">
+                <div class="nav-item @ViewBag.DataActive">
+                    <div class="nav-img"><img src="img/img-6.png"></div>
+                    <div class="nav-title">отчеты</div>
+                </div>
+            </a>
+            <div class="nav-item">
+                <div class="nav-img"><img src="img/img-7.png"></div>
+                <div class="nav-title">справочники</div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Bracelet Tracker</p>
-        </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
