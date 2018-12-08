@@ -148,6 +148,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\demo.js" />
     <Content Include="Content\grid.css" />
+    <Content Include="Content\incidents.css" />
+    <Content Include="Content\ways.css" />
     <Content Include="img\arr-down-red.png" />
     <Content Include="img\arr-up-green.png" />
     <Content Include="img\arr-up-red.png" />
@@ -172,11 +174,21 @@
     <Content Include="img\img-1.png" />
     <Content Include="img\img-2-white.png" />
     <Content Include="img\img-2.png" />
+    <Content Include="img\img-3-white.png" />
     <Content Include="img\img-3.png" />
+    <Content Include="img\img-4-white.png" />
     <Content Include="img\img-4.png" />
     <Content Include="img\img-5.png" />
     <Content Include="img\img-6.png" />
     <Content Include="img\img-7.png" />
+    <Content Include="img\inci-arr-down-green.png" />
+    <Content Include="img\inci-arr-down.png" />
+    <Content Include="img\inci-arr-up-green.png" />
+    <Content Include="img\inci-arr-up.png" />
+    <Content Include="img\inci-black.png" />
+    <Content Include="img\inci-dia-2.png" />
+    <Content Include="img\inci-diagram.png" />
+    <Content Include="img\inci-greenblue.png" />
     <Content Include="img\item-img-1.png" />
     <Content Include="img\item-img-2.png" />
     <Content Include="img\item-img-3.png" />
@@ -195,8 +207,11 @@
     <Content Include="img\red.png" />
     <Content Include="img\small-arr-up-green.png" />
     <Content Include="img\small-arr-up-red.png" />
+    <Content Include="img\small-checked.png" />
+    <Content Include="img\small-nonchecked.png" />
     <Content Include="img\up-arrow.svg" />
     <Content Include="img\user.png" />
+    <Content Include="img\wide-down-arr.png" />
     <Content Include="img\yellow.png" />
     <Content Include="img\yellowgreen.png" />
     <Content Include="Content\index.css" />
@@ -245,8 +260,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Home\analytics.cshtml" />
+    <Content Include="Views\Home\incidents.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <None Include="Views\Home\select.cshtml" />
+    <Content Include="Views\Home\ways.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

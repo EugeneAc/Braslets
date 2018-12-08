@@ -15,10 +15,16 @@ namespace BrasletsWeb.Controllers
     {
         private string[] devices = new[] {"34184F1854385617", "635DD7499A9C60EA"};
         private string _authCookie;
-        public ActionResult Data()
+
+        public HomeController()
         {
             var service = RestFetcher.Instance;
             _authCookie = service.Authorize();
+        }
+
+        public ActionResult Data()
+        {
+            var service = RestFetcher.Instance;
             var model = new HomeModel();
             model.Braslets = new List<BrasletModel>();
             foreach (var device in devices)
@@ -68,15 +74,60 @@ namespace BrasletsWeb.Controllers
 
         public ActionResult Analytics()
         {
+            var service = RestFetcher.Instance;
+            var model = new HomeModel();
+            model.Braslets = new List<BrasletModel>();
+       
+            foreach (var device in devices)
+            {
+                var healthData = service.FetchHealhData(_authCookie, device);
+                var alarmData = service.GetAlarmData(_authCookie, device);
+                var brasletModel = new BrasletModel();
+                brasletModel.Person = new PersonModel();
+                if (healthData != null)
+                {
+                    brasletModel.Person = healthData;
+                }
+
+
+                if (alarmData != null)
+                {
+                    brasletModel.Alarms = alarmData;
+                }
+
+                model.Braslets.Add(brasletModel);
+            }
             ViewBag.AnalyticActive = "active";
-            return View();
+            return View(model);
         }
 
-        public ActionResult Select()
+        public ActionResult Incidents()
         {
-            
+            ViewBag.AnalyticIncidents = "active";
             return View();
         }
 
+        public ActionResult Ways()
+        {
+            var service = RestFetcher.Instance;
+            var model = new HomeModel();
+            model.Braslets = new List<BrasletModel>();
+            foreach (var device in devices)
+            {
+                var coordinates = service.FetchLocationData(_authCookie, device);
+                
+                var brasletModel = new BrasletModel();
+                brasletModel.LocationInfo = new LocationInfoModel();
+                if (coordinates != null)
+                {
+                    brasletModel.LocationInfo = coordinates;
+                }
+
+                model.Braslets.Add(brasletModel);
+            }
+           
+            ViewBag.AnalyticWays = "active";
+            return View(model);
+        }
     }
 }

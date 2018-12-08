@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="jquery.formstyler.css" rel="stylesheet" />
+    <link href="jquery.formstyler.theme.css" rel="stylesheet" />
+    <link href="select.css" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.formstyler.js"></script>
+    <script>
+        (function($) {
+            $(function() {
+                $('input, select').styler({
+                    selectSearch: true,
+                });
+            });
+        })(jQuery);
+    </script>
+
+</head>
+<body>
+
+<div id="styled-select">
+    <select>
+        <option value="ru">РУС</option>
+        <option value="en">Eng</option>
+        <option value="kz">Kz</option>
+    </select>
+</div>
+
+
+
+
+</body>
+</html>

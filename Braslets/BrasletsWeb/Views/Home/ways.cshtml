@@ -1,0 +1,206 @@
+﻿@model BrasletsWeb.Models.HomeModel
+@{
+    ViewBag.Title = "ГЛАВНАЯ/МАРШРУТЫ";
+}
+
+<div class="main-block">
+    <div class="ways-map">
+        <div id="map"></div>
+    </div>
+    <div class="ways-objects">
+        <div class="dropdown">
+            <div class="choice-object mainmenubtn">
+                Выбор объекта
+                <img src="img/wide-down-arr.png">
+            </div>
+            <div class="dropdown-child">
+                <a href="#">Объект 1</a>
+                <a href="#">Объект 2</a>
+                <a href="#">Объект 3</a>
+                <a href="#">Объект 4</a>
+                <a href="#">Объект 5</a>
+            </div>
+        </div>
+
+        <div class="objects-list">
+            <div class="ways-objects-title">
+                Объекты
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox1">
+                <label for="wayscheckbox1">Питание</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" checked id="wayscheckbox2">
+                <label for="wayscheckbox2">Производство</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox3">
+                <label for="wayscheckbox3">Медицина</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox4">
+                <label for="wayscheckbox4">Дороги</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox5">
+                <label for="wayscheckbox5">Офисные</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox6">
+                <label for="wayscheckbox6">Границы</label>
+            </div>
+            <div class="ways-objects-title ways-people">
+                Люди
+            </div>
+            @{
+                int i = 7;
+                foreach (var braslet in Model.Braslets)
+                {
+                    string id = "'wayscheckbox" + i;
+                    <div class="ways-checkbox">
+                        <input name="ways-checkbox-1" type="radio" id='@id'
+                               data-lat="@braslet.LocationInfo.OLat" data-lng="@braslet.LocationInfo.OLng"
+                               onclick="ChangeMapCenter(@braslet.LocationInfo.OLat, @braslet.LocationInfo.OLng)">
+                        <label for="@id">@braslet.LocationInfo.DeviceName</label>
+                    </div>
+                    i++;
+                }
+            }
+
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox9">
+                <label for="wayscheckbox9">Иванов И.И.</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox10">
+                <label for="wayscheckbox10">Операторы погрузчиков</label>
+            </div>
+            <div class="ways-objects-title ways-people">
+                Транспорт
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox11">
+                <label for="wayscheckbox11">ВАЗ 2107 г/н 999 DAF</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox12">
+                <label for="wayscheckbox12">ВАЗ 2108 г/н 278 NNS</label>
+            </div>
+            <div class="ways-checkbox">
+                <input name="ways-checkbox-1" type="radio" id="wayscheckbox13">
+                <label for="wayscheckbox13">Погрузчики</label>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="ways-notions">
+        <div class="ways-notions-title">
+            Оповещения
+        </div>
+        <div class="ways-ns-table">
+            <div class="ways-ns-table-1">
+                    <div class="ways-ns-checkbox">
+                        <input name="ways-ns-checkbox-1" checked type="checkbox" id="w-ns-check-1">
+                        <label for="w-ns-check-1">Иванов И.И.</label>
+                    </div>
+                    <div class="ways-ns-checkbox">
+                        <input name="ways-ns-checkbox-1" type="checkbox" id="w-ns-check-2">
+                        <label for="w-ns-check-2">Операторы погрузчиков</label>
+                    </div>
+                </div>
+            <div class="ways-ns-table-2">
+                <textarea class="ways-ns-text" placeholder="Введите текст сообщения"></textarea>
+            </div>
+            <div class="ways-ns-buttons">
+                <div id="ns-button-1">отправить</div>
+                <div id="ns-button-2">отправить всем</div>
+                <div id="ns-button-3">отмена</div>
+
+            </div>
+        </div>
+    </div>
+    <div class="filter-search">
+        <div class="search">
+            <input type="text" placeholder="Поиск сотрудника">
+        </div>
+        <div class="filter">
+            <div class="filter-title">
+                фильтр маршруты
+            </div>
+            <div class="filter-table">
+                <div class="filter-1">
+                    <div class="ways-checkbox">
+                        <input name="filter-checkbox-1" type="radio" id="filterbox-1">
+                        <label for="filterbox-1">Передвижение</label>
+                    </div>
+                    <div class="ways-checkbox">
+                        <input name="filter-checkbox-1" type="radio" checked id="filterbox-2">
+                        <label for="filterbox-2">Остановки</label>
+                    </div>
+                    <div class="ways-checkbox">
+                        <input name="filter-checkbox-1" type="radio" id="filterbox-3">
+                        <label for="filterbox-3">Выходы</label>
+                    </div>
+                </div>
+                <div class="filter-2">
+                    <div class="ways-checkbox">
+                        <input name="filter-checkbox-1" type="radio" id="filterbox-4">
+                        <label for="filterbox-4">Перерывы</label>
+                    </div>
+                    <div class="ways-checkbox">
+                        <input name="filter-checkbox-1" type="radio" id="filterbox-5">
+                        <label for="filterbox-5">Запрещенные зоны</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+      // The location of braslets
+        var braslet1 = { lat: @Model.Braslets[0].LocationInfo.OLat, lng: @Model.Braslets[0].LocationInfo.OLng};
+        var braslet2 = {lat: @Model.Braslets[1].LocationInfo.OLat, lng: @Model.Braslets[1].LocationInfo.OLng};
+// Initialize and add the map
+function initMap() {
+  // The map, centered at braslet1
+  var map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 17, center: braslet1});
+  // The marker, positioned at braslet1
+    var marker1 = new google.maps.Marker({
+        position: braslet1,
+        map: map,
+        title: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()[0]'
+    });
+    var marker2 = new google.maps.Marker({
+        position: braslet2,
+        map: map,
+        title: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()[0]'
+    });
+    }
+
+    function ChangeMapCenter(lat, lng) {
+        map = new google.maps.Map(document.getElementById('map'));
+        map.setZoom(17);      // This will trigger a zoom_changed on the map
+        map.setCenter(new google.maps.LatLng(lat, lng));
+        var marker1 = new google.maps.Marker({
+        position: braslet1,
+        map: map,
+        title: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[0].LocationInfo.DeviceName.Trim()[0]'
+    });
+    var marker2 = new google.maps.Marker({
+        position: braslet2,
+        map: map,
+        title: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()',
+        label: '@Model.Braslets[1].LocationInfo.DeviceName.Trim()[0]'
+    });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9eDB01EtMemNJRHA251bwosnNzlRjKQY&callback=initMap">
+</script>

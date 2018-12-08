@@ -7,6 +7,8 @@
     <link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
     <link href="~/Content/index.css" rel="stylesheet">
     <link href="~/Content/analytics.css" rel="stylesheet">
+    <link href="~/Content/ways.css" rel="stylesheet">
+    <link href="~/Content/incidents.css" rel="stylesheet" />
     <script src="~/Content/jquery-3.3.1.min.js"></script>
     <script src="~/Content/jquery.formstyler.js"></script>
     @Styles.Render("~/Content/css")
@@ -83,45 +85,49 @@
             </table>
         </div>
         <div id="nav-dot">
-            
+            @ViewBag.Title
         </div>
         <div id="main-block-line">
-        <div id="aside-left">
-            <a href="index">
-                <div class="nav-item @ViewBag.IndexActive">
-                    <div class="nav-img"><img class="img-1" src="img/img-1.png"> <img class="img-2" src="img/img-1-white.png"></div>
-                    <div class="nav-title">главная</div>
-                </div>
-            </a>
-            <a href="analytics">
-                <div class="nav-item @ViewBag.AnalyticActive">
-                    <div class="nav-img"><img class="img-1" src="img/img-2.png"> <img class="img-2" src="img/img-2-white.png"></div>
-                    <div class="nav-title">аналитика</div>
-                </div>
-            </a>
-            <div class="nav-item">
-                <div class="nav-img"><img src="img/img-3.png"></div>
-                <div class="nav-title">маршруты</div>
+            <div id="aside-left">
+                <a href="index">
+                    <div class="nav-item @ViewBag.IndexActive">
+                        <div class="nav-img"><img class="img-1" src="img/img-1.png"> <img class="img-2" src="img/img-1-white.png"></div>
+                        <div class="nav-title">главная</div>
+                    </div>
+                </a>
+                <a href="analytics">
+                    <div class="nav-item @ViewBag.AnalyticActive">
+                        <div class="nav-img"><img class="img-1" src="img/img-2.png"> <img class="img-2" src="img/img-2-white.png"></div>
+                        <div class="nav-title">аналитика</div>
+                    </div>
+                </a>
+                <a href="ways">
+                    <div class="nav-item">
+                        <div class="nav-img @ViewBag.WaysActive"><img src="img/img-3.png"></div>
+                        <div class="nav-title">маршруты</div>
+                    </div>
+                </a>
+                <a href="incidents">
+                    <div class="nav-item">
+                        <div class="nav-img @ViewBag.IncidentsActive"><img src="img/img-4.png"></div>
+                        <div class="nav-title">инциденты тб</div>
+                    </div>
+                </a>
+                    <div class="nav-item">
+                        <div class="nav-img"><img src="img/img-5.png"></div>
+                        <div class="nav-title">здоровье</div>
+                    </div>
+                    <a href="Data">
+                        <div class="nav-item @ViewBag.DataActive">
+                            <div class="nav-img"><img src="img/img-6.png"></div>
+                            <div class="nav-title">отчеты</div>
+                        </div>
+                    </a>
+                    <div class="nav-item">
+                        <div class="nav-img"><img src="img/img-7.png"></div>
+                        <div class="nav-title">справочники</div>
+                    </div>
             </div>
-            <div class="nav-item">
-                <div class="nav-img"><img src="img/img-4.png"></div>
-                <div class="nav-title">инциденты тб</div>
-            </div>
-            <div class="nav-item">
-                <div class="nav-img"><img src="img/img-5.png"></div>
-                <div class="nav-title">здоровье</div>
-            </div>
-            <a href="Data">
-                <div class="nav-item @ViewBag.DataActive">
-                    <div class="nav-img"><img src="img/img-6.png"></div>
-                    <div class="nav-title">отчеты</div>
-                </div>
-            </a>
-            <div class="nav-item">
-                <div class="nav-img"><img src="img/img-7.png"></div>
-                <div class="nav-title">справочники</div>
-            </div>
-        </div>
         @RenderBody()
     </div>
 </div>

@@ -1,0 +1,397 @@
+﻿@model BrasletsWeb.Models.HomeModel
+    @{
+        ViewBag.Title = "ГЛАВНАЯ/ИНЦИДЕНТЫ ТБ";
+    }
+<div class="inci-main">
+    <div class="inci-block-1">
+        <div class="inci-block-1-1">
+            <div class="inci-1-title">
+                происшествий по тб
+            </div>
+            <div class="inci-1-1-value">
+                <div class="inci-1-1-count">27</div>
+                <div class="inci-1-1-percents"><img src="img/inci-arr-down-green.png"> 12%</div>
+            </div>
+        </div>
+        <div class="inci-block-1-2">
+            <div class="inci-1-2-title">происшествия</div>
+            <div class="inci-img"><img src="img/inci-diagram.png"></div>
+        </div>
+        <div class="inci-block-1-3">
+            <div class="inci-1-title">
+                показатель тб
+            </div>
+            <div class="inci-1-1-value">
+                <div class="inci-1-1-count">96%</div>
+                <div class="inci-1-1-percents"><img src="img/inci-arr-up-green.png"> 4%</div>
+            </div>
+        </div>
+    </div>
+    <div class="inci-block-2 objects">
+        <div class="object-title">Объекты</div>
+        <div class="checkboxes">
+            <div class="checkbox-row">
+                <input type="checkbox" checked id="checkbox1">
+                <label for="checkbox1">офис ссгпо</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">промбаза ссгпо</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox3">
+                <label for="checkbox3">оф - центральная</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">
+                    куржункульский
+                    карьер
+                </label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox5">
+                <label for="checkbox5">сарбайский карьер</label>
+            </div>
+        </div>
+
+        <div class="object-button-wrap">
+            <div class="object-button">Показать</div>
+        </div>
+
+    </div>
+    <div class="inci-block-3">
+        <div class="inci-3-title">
+            нарушители ТБ
+        </div>
+        <table class="inci-3-table">
+            <tr class="tr-title">
+                <td>
+                    №
+                </td>
+                <td>
+                    ФИО
+                </td>
+                <td>
+                    Время
+                </td>
+                <td>
+                    Нарушение
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Иванов И.И.
+                </td>
+                <td>
+                    11.12.2018  08:10
+                </td>
+                <td>
+                    Опасное приближение
+                    к работающему ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    Смирнов А.В.
+                </td>
+                <td>
+                    10.12.2018  16:22
+                </td>
+                <td>
+                    Превышение скорости
+                    движения
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    Куанышбаев А.С.
+                </td>
+                <td>
+                    10.12.2018  12:56
+                </td>
+                <td>
+                    Въезд на запрещенную
+                    территорию
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    Иванов И.И.
+                </td>
+                <td>
+                    10.12.2018  11:08
+                </td>
+                <td>
+                    Опасное приближение
+                    к работающему ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    Смирнов А.В.
+                </td>
+                <td>
+                    10.12.2018  10:31
+                </td>
+                <td>
+                    Превышение скорости
+                    движения
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="inci-block-4">
+        <div class="inci-3-title">
+            инциденты тб
+        </div>
+        <table class="inci-3-table">
+            <tr class="tr-title">
+                <td>
+                    №
+                </td>
+                <td>
+                    ФИО
+                </td>
+                <td>
+                    Время
+                </td>
+                <td>
+                    Нарушение
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Иванов И.И.
+                </td>
+                <td>
+                    11.12.2018  08:10
+                </td>
+                <td>
+                    Потеря сознания
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    Смирнов А.В.
+                </td>
+                <td>
+                    10.12.2018  16:22
+                </td>
+                <td>
+                    Падение
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    Куанышбаев А.С.
+                </td>
+                <td>
+                    10.12.2018  12:56
+                </td>
+                <td>
+                    Опасное превышение
+                    А/Д
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    Иванов И.И.
+                </td>
+                <td>
+                    10.12.2018  11:08
+                </td>
+                <td>
+                    Потеря сознания
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    Смирнов А.В.
+                </td>
+                <td>
+                    10.12.2018  10:31
+                </td>
+                <td>
+                    Падение
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="inci-block-5">
+
+        <div class="inci-5-title">
+            дашборд нарушений
+        </div>
+        <table class="inci-5-table">
+            <tr>
+                <td>
+                    опасные приближения
+                </td>
+                <td>
+                    7
+                </td>
+                <td class="red">
+                    <img src="img/inci-arr-up.png">12%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    превышения скорости
+                </td>
+                <td>
+                    8
+                </td>
+                <td class="green">
+                    <img src="img/inci-arr-down.png">54%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    въезды на запрещ. территорию
+                </td>
+                <td>
+                    3
+                </td>
+                <td class="green">
+                    <img src="img/inci-arr-down.png">10%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    несанкционированный вход
+                </td>
+                <td>
+                    7
+                </td>
+                <td class="red">
+                    <img src="img/inci-arr-up.png">8%
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="inci-block-6">
+        <div class="inci-5-title">
+            дашборд инцидентов
+        </div>
+        <table class="inci-5-table">
+            <tr>
+                <td>
+                    итого
+                </td>
+                <td>
+                    20
+                </td>
+                <td class="red">
+                    <img src="img/inci-arr-up.png">15%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    потери сознания
+                </td>
+                <td>
+                    4
+                </td>
+                <td class="green">
+                    <img src="img/inci-arr-down.png">5%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    падения
+                </td>
+                <td>
+                    8
+                </td>
+                <td class="green">
+                    <img src="img/inci-arr-down.png">12%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    опасные превышения а/д
+                </td>
+                <td>
+                    15
+                </td>
+                <td class="red">
+                    <img src="img/inci-arr-up.png">15%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    опасные превышения пульса
+                </td>
+                <td>
+                    4
+                </td>
+                <td class="green">
+                    <img src="img/inci-arr-down.png">2%
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    включение тревожной кнопки
+                </td>
+                <td>
+                    5
+                </td>
+                <td class="red">
+                    <img src="img/inci-arr-up.png">6%
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="inci-block-7">
+
+        <table class="inci-7-table">
+            <tr>
+                <td>
+                    <img src="img/inci-dia-2.png">
+                </td>
+                <td class="inci-text-count">
+                    <div class="inci-7-text-1">Происшествий</div>
+
+                    <div class="inci-7-text-2">48</div>
+                </td>
+            </tr>
+        </table>
+        <div class="inci-7-text">
+            <div><img src="img/inci-greenblue.png">Нарушения</div>
+            <div><img src="img/inci-black.png">Инциденты</div>
+        </div>
+
+    </div>
+</div>

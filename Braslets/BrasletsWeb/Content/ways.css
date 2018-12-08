@@ -1,0 +1,297 @@
+
+body{
+    min-width:1600px;
+}
+.main-block{
+    margin-left:49px;
+    height:857px;
+    display:grid;
+    grid-gap:25px;
+    grid-template-columns:7.6fr 4.6fr 292px;
+    grid-template-rows: 552px 1fr;
+    grid-template-areas:
+    'ways-map ways-map ways-objects'
+    'ways-notions filter-search ways-objects';
+    width:calc(100% - 347px)
+}
+
+.main-block>div{
+    background-color:#ececec;
+}
+
+
+.ways-map{
+    grid-area: ways-map;
+}
+
+#map{
+    width:100%;
+    height:100%;
+}
+
+
+div.ways-notions, div.search, div.filter, div.dropdown, div.objects-list{
+    border-radius:5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+/*-------------------------------------------------------ways-objects--------------------------*/
+.ways-objects{
+    grid-area:ways-objects;
+    display:grid;
+    grid-gap:15px;
+    grid-template-columns: 1fr;
+    grid-template-rows:45px 1fr;
+}
+
+.mainmenubtn {
+
+    border: none;
+    cursor: pointer;
+    padding-bottom:5px;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index:100;
+
+}
+.dropdown-child {
+    padding-left:17px;
+    display: none;
+    z-index:100;
+    background-color: white;
+    min-width: 100px;
+    border-bottom:5px solid #ececec;
+}
+.dropdown-child a:hover {
+    background-color:white;
+    color:#0089a6;
+
+}
+
+
+.dropdown-child a {
+    color: black;
+    padding: 5px 24px 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+
+
+
+
+.ways-objects>div{
+    background-color:white;
+}
+
+.choice-object{
+    position:relative;
+    font-size:14px;
+    font-family:Roboto-Black;
+    padding-left:23px;
+    padding-top:14px;
+    text-transform: uppercase;
+}
+
+.choice-object>img{
+    position:absolute;
+    top:19px;
+    right:23px;
+}
+.objects-list{
+    z-index:1;
+    padding-top:26px;
+    padding-left:30px;
+    padding-right:30px;
+}
+.ways-objects-title{
+    text-transform: uppercase;
+    font-family:Roboto-Bold;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.ways-checkbox label{
+    display:block;
+    padding-left:22px;
+    font-size:14px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#0089a6;
+    border-radius: 3px;
+}
+
+.ways-checkbox>input{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 10px 0 0 7px;
+
+}
+
+.ways-checkbox>input + label {
+    position: relative;
+    cursor: pointer;
+}
+
+.ways-checkbox>input:checked + label{
+    background-color:#ececec;
+    color:black;
+}
+
+.ways-people{
+    margin-top:40px;
+}
+/*-------------------------------------------------notions--------------------------*/
+div.ways-notions{
+    grid-area:ways-notions;
+    padding:25px 36px 30px 36px;
+    background-color:white;
+}
+.ways-notions-title{
+    font-size:18px;
+    font-family:Roboto-Bold;
+    text-transform: uppercase;
+    margin-bottom:15px;
+
+}
+
+.ways-ns-table{
+    display:grid;
+    grid-template-columns:2.9fr 3.79fr;
+    grid-template-rows: 135px 30px;
+    grid-column-gap:12px;
+    grid-row-gap:16px;
+}
+
+.ways-ns-table>div{
+    box-sizing:border-box;
+}
+.ways-ns-text{
+    box-sizing: border-box;
+    display:block;
+    width:100%;
+    height:100%;
+    border:1px solid #c7c7c7;
+    font-family: Roboto-Regular !important;
+    border-radius:6px;
+    resize: none;
+    font-size:14px;
+    padding:12px 17px;
+
+
+}
+.ways-ns-table-1{
+    grid-row:1/3;
+    border:1px solid #c7c7c7;
+    border-radius:6px;
+    padding:12px;
+}
+
+.ways-ns-table-1 input[type="checkbox"]{
+    position:absolute;
+    left:-9999px;
+}
+
+.ways-ns-table-1 input[type="checkbox"]+label{
+    display:inline-block;
+    position:relative;
+    font-size:14px;
+    padding-left:28px;
+}
+ input+label{
+    cursor: pointer;
+}
+.ways-ns-table-1 input[type="checkbox"]:checked+label{
+    color:black;
+    background:url("../img/small-checked.png") 0 0 no-repeat;
+}
+.ways-ns-table-1 input[type="checkbox"]:not(:checked)+label{
+    color:#0089a6;
+    background:url("../img/small-nonchecked.png") 0 0 no-repeat;
+}
+
+
+
+
+
+
+
+
+
+.ways-ns-buttons{
+    display:grid;
+    grid-template-columns:13.5fr 14.4fr 9.7fr;
+    grid-column-gap:4px;
+}
+
+.ways-ns-buttons>div{
+    cursor: pointer;
+    box-sizing:border-box;
+    text-transform:uppercase;
+    font-family:Roboto-Black;
+    font-size:12px;
+    color:white;
+    justify-content: center;
+    text-align:center;
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+}
+
+#ns-button-1{
+   background-color:#0089a6;
+}
+
+#ns-button-2{
+    background-color:#626262;
+}
+
+#ns-button-3{
+    background-color:#a2a2a2;
+}
+/*-----------------------------------------------filter-search---------------------------*/
+.filter-search{
+    grid-area:filter-search;
+    display:grid;
+    grid-row-gap: 16px;
+    grid-template-rows: 43px 1fr;
+}
+.filter-search>div{
+    background-color:white;
+}
+
+.search>input{
+    width:100%;
+    box-sizing:border-box;
+    height:100%;
+    border:none;
+    padding-left:18px;
+    font-size:14px;
+    color:#7a7a7a;
+}
+.filter{
+    padding:27px;
+}
+.filter-title{
+    text-transform:uppercase;
+    font-size:18px;
+    font-family:Roboto-Bold;
+    margin-bottom:28px;
+
+}
+
+.filter-table{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-column-gap:15px;
+}
+
+.filter-1 .ways-checkbox label{
+    padding-left:12px;
+}

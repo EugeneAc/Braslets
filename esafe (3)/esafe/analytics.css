@@ -260,14 +260,14 @@ div.round-diagrams{
     line-height:20px;
 
 }
-    .checkboxes input[type="checkbox"]:checked + label {
-        color: black;
-        background: url("../img/checked.png") 0 0 no-repeat;
-    }
-    .checkboxes input[type="checkbox"]:not(:checked) + label {
-        color: #6f6f6f;
-        background: url("../img/nonchecked.png") 0 0 no-repeat;
-    }
+.checkboxes input[type="checkbox"]:checked+label{
+    color:black;
+     background:url("img/checked.png") 0 0 no-repeat;
+ }
+.checkboxes input[type="checkbox"]:not(:checked)+label{
+    color:#6f6f6f;
+    background:url("img/nonchecked.png") 0 0 no-repeat;
+}
 
 .object-button-wrap{
     padding-left:44px;
