@@ -1,0 +1,260 @@
+﻿@model BrasletsWeb.Models.HomeModel
+@{
+    ViewBag.Title = "ГЛАВНАЯ/СПРАВОЧНИК";
+}
+<link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
+<link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
+<link href="~/Content/index.css" rel="stylesheet">
+<link href="~/Content/sprav.css" rel="stylesheet">
+
+<script src="~/Content/jquery-3.3.1.min.js"></script>
+<script src="~/Content/jquery.formstyler.js"></script>
+
+
+<div class="main-block">
+
+    <div class="title">Справочник</div>
+    <div class="sel">
+        <div class="dropdown">
+            <div class="choice-object mainmenubtn">
+                ССГПО, Офис
+                <img src="img/wide-down-arr.png">
+            </div>
+            <div class="dropdown-child">
+                <a href="#">Группа 1</a>
+                <a href="#">Группа 2</a>
+                <a href="#">Группа 3</a>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+
+    <table class="sprav-table">
+        <tr class="first">
+            <td class="tdname">Места</td>
+            <td>
+                <div class="name">прием пищи</div>
+                <ul>
+                    <li><a href="food">Столовая ИТР</a></li>
+                    <li><a href="food">Буфет</a></li>
+                    <li><a href="food">Буфет цеха</a></li>
+                </ul>
+
+            </td>
+
+            <td>
+                <div class="name">Медицинские</div>
+                <ul>
+                    <li><a href="food">Стоматологический кабинет</a></li>
+                    <li><a href="food">Мед. пункт АБК</a></li>
+                    <li><a href="food">Мед. пункт цеха</a></li>
+                </ul>
+
+            </td>
+
+
+
+
+            <td style="width:25%">
+                <div class="name">Рабочие</div>
+                <ul class="list2">
+                    <li><a href="food">Гараж</a></li>
+                    <li><a href="food">Офисы ПТО</a></li>
+                    <li><a href="food">Офисы ТБ</a></li>
+                    <li><a href="food">Руководители</a></li>
+                    <li><a href="food">Цех связи</a></li>
+                    <li><a href="food">Электроцех</a></li>
+                    <li><a href="food">Карьер</a></li>
+                    <li><a href="food">Дорога карьера</a></li>
+                    <li><a href="food">Склад ГСМ</a></li>
+                </ul>
+
+            </td>
+
+            <td>
+                <div class="name">Отдых</div>
+                <ul>
+                    <li><a href="food">Раздевалка 1</a></li>
+                    <li><a href="food">Раздевалка 2</a></li>
+                    <li><a href="food">Фойе АБК</a></li>
+
+                </ul>
+
+            </td>
+
+
+        </tr>
+
+
+
+
+
+
+
+
+        <tr>
+            <td class="tdname">Персонал</td>
+            <td>
+                <ul>
+                    <li><a href="food">ИТР</a></li>
+
+                </ul>
+
+            </td>
+
+            <td>
+                <ul>
+                    <li><a href="food">Руководители</a></li>
+
+                </ul>
+
+            </td>
+
+
+
+
+            <td style="width:20%;">
+                <ul>
+                    <li><a href="food">Административный персонал</a></li>
+
+                </ul>
+
+            </td>
+
+            <td>
+                <ul>
+
+                    <li><a href="food">Рабочие</a></li>
+
+                </ul>
+
+            </td>
+
+
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+        <tr>
+            <td class="tdname">Маршруты</td>
+            <td colspan="2">
+                <div class="name">Люди</div>
+                <ul>
+                    <li><a href="food">Рабочие эл. цеха</a></li>
+                    <li><a href="food">Рабочие</a></li>
+                    <li><a href="food">Оператор экскаватора</a></li>
+                </ul>
+
+            </td>
+
+            <td colspan="2">
+                <div class="name">Транспорт</div>
+                <ul>
+                    <li><a href="food">Больдозер САТ № 331</a></li>
+                    <li><a href="food">Погрузчик Komatsu № 122</a></li>
+                    <li><a href="food">Легковой TLC 100 № 08 614 HFA</a></li>
+                </ul>
+
+            </td>
+
+
+
+
+
+
+
+
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <tr>
+            <td class="tdname">Разрешения и лимиты</td>
+            <td>
+                <div class="name">запрещенные зоны</div>
+                <ul>
+                    <li><a href="food">Склад ГСМ</a></li>
+                    <li><a href="food">Открытый склад</a></li>
+                    <li><a href="food">ОРУ</a></li>
+                </ul>
+
+            </td>
+
+            <td>
+                <div class="name">опасные зоны</div>
+                <ul>
+                    <li><a href="food">ТП 6/0,4 КВ</a></li>
+                    <li><a href="food">ТП 110/6 КВ</a></li>
+                    <li><a href="food">АЗС</a></li>
+                </ul>
+
+            </td>
+
+
+
+
+            <td>
+                <div class="name">границы</div>
+                <ul>
+                    <li><a href="food">Карьер</a></li>
+                    <li><a href="food">Парковка</a></li>
+                    <li><a href="food">Предприятие</a></li>
+                    <li><a href="food">Территория АБК</a></li>
+
+                </ul>
+
+            </td>
+
+            <td>
+                <div class="name">места пр.</div>
+                <ul>
+                    <li><a href="food">Буфет</a></li>
+                    <li><a href="food">Буфет цеха</a></li>
+                    <li><a href="food">Место 1</a></li>
+                    <li><a href="food">Место 2</a></li>
+
+                </ul>
+
+            </td>
+
+
+        </tr>
+
+
+
+
+
+
+    </table>
+
+
+
+</div>
+

@@ -1,0 +1,414 @@
+﻿@model BrasletsWeb.Models.HomeModel
+@{
+    ViewBag.Title = "ГЛАВНАЯ/ЗДОРОВЬЕ";
+}
+<link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
+<link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
+<link href="~/Content/index.css" rel="stylesheet">
+<link href="~/Content/analytics.css" rel="stylesheet">
+<link href="~/Content/ways.css" rel="stylesheet">
+<link href="~/Content/health.css" rel="stylesheet">
+<link href="~/Content/reports.css" rel="stylesheet">
+<link href="~/Content/incidents.css" rel="stylesheet">
+<link href="~/Content/sprav.css" rel="stylesheet">
+<link href="~/Content/food.css" rel="stylesheet">
+<link href="~/Content/incidents.css" rel="stylesheet" />
+<script src="~/Content/jquery-3.3.1.min.js"></script>
+<script src="~/Content/jquery.formstyler.js"></script>
+<script>
+    (function ($) {
+        $(function () {
+            function addblock(name, ad1, ad2, p, date, delay) {
+                $('#dynamic').prepend('<div class="h-b-2-elem"><div class="b-2-title">' + name + '</div><div class="b-2-date">' + date + '</div><div class="b-2-audi"><div class="audi-left">А/Д: <span class="bold">' + ad1 + '/' + ad2 + '</span></div><div class="audi-right">П:<span class="bold">' + p + '</span></div></div></div>').fadeIn(3000);
+            }
+
+            function removeblock(pos) {
+                $('#dynamic .h-b-2-elem:eq(' + pos + ')').hide();
+            }
+
+            function randomInteger(min, max) {
+                var rand = min - 0.5 + Math.random() * (max - min + 1)
+                rand = Math.round(rand);
+                return rand;
+            }
+
+
+            setTimeout(function () {
+                addblock('Миххев А.И.', '120', '60', '80', '12:12:2018 09:00');
+            }, 3000); // время в мс
+
+            setTimeout(function () {
+                addblock('Назарбаев Д.И.', '140', '65', '100', '11:12:2018 08:00');
+            }, 9000); // время в мс
+
+
+            setTimeout(function () {
+                removeblock(randomInteger(0, 6));
+            }, 6000); // время в мс
+
+
+            setTimeout(function () {
+                removeblock(randomInteger(0, 6));
+            }, 12000); // время в мс
+
+            setTimeout(function () {
+                removeblock(randomInteger(0, 6));
+            }, 15000); // время в мс
+
+        });
+    })(jQuery);
+</script>
+<div class="h-main">
+    <div class="h-b-1-wrap">
+        <div class="h-block-1">
+            <div class="h-block-1-1">
+                <div class="h-b-1-title">
+                    Аномальное А/Д за период
+                </div>
+                <div class="h-b-1-hours">
+                    2480 час.
+                </div>
+                <div class="h-b-1-percents red">
+                    <img src="img/h-1-1-arr-up.png">2%
+                </div>
+            </div>
+            <div class="h-block-1-2">
+                <div class="h-b-1-title">
+                    Аномальный пульс за период
+                </div>
+                <div class="h-b-1-hours">
+                    1731 час.
+                </div>
+                <div class="h-b-1-percents red">
+                    <img src="img/h-1-1-arr-up.png">1,2%
+                </div>
+            </div>
+            <div class="h-block-1-3">
+                <div class="h-b-1-title">
+                    инциденты здоровья за период
+                </div>
+                <div class="h-b-1-hours">
+                    18
+                </div>
+                <div class="h-b-1-percents green">
+                    <img src="img/h-1-1-arr-down.png">28%
+                </div>
+            </div>
+            <div class="h-block-1-4">
+                <div class="h-b-1-title">
+                    Общий показатель здоровья по предприятию
+                </div>
+                <div class="h-b-1-hours">
+                    81/100
+                </div>
+                <div class="h-b-1-percents red">
+                    <img src="img/h-1-1-arr-down-red.png">0,4%
+                </div>
+            </div>
+
+
+            <div class="h-block-1-5">
+                <div class="h-b-1-5-title">
+                    инциденты здоровья за период
+                </div>
+                <table class="h-b-1-5-table">
+                    <tr>
+                        <td>
+                            потеря сознания
+                        </td>
+                        <td>
+                            7
+                        </td>
+                        <td class="red">
+                            <img class="h-b-1-5-img" src="img/h-5-arr-up.png">12%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            падения
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td class="green">
+                            <img class="h-b-1-5-img" src="img/h-5-arr-down.png">54%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            опасное превышение а/д
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td class="green">
+                            <img class="h-b-1-5-img" src="img/h-5-arr-down.png">10%
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="h-block-2">
+        <div class="h-b-2-title">
+            текущая опасная динамика
+        </div>
+        <div class="h-b-2-table-wrap">
+            <div class="h-b-2-table" id="dynamic">
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Иванов И.И.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  09:21
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">160/120</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">95</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Ахметова Л. Т.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  09:17
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">180/100</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">140</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Куанышбаев А. С.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  09:01
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">120/80</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">164</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Прокофьева В.П.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  08:54
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">190/130</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">65</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Вениаминов З.Н.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  08:43
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">130/70</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">95</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Исенбаева Ж. Б.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  08:33
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">165/125</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">82</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-b-2-elem">
+                    <div class="b-2-title">
+                        Поздняков А.С.
+                    </div>
+                    <div class="b-2-date">
+                        13.12.18  08:07
+                    </div>
+                    <div class="b-2-audi">
+                        <div class="audi-left">
+                            А/Д: <span class="bold">80/30</span>
+                        </div>
+                        <div class="audi-right">
+                            П:<span class="bold">185</span>
+                        </div>
+                    </div>
+                </div>
+                @foreach (var braslet in Model.Braslets)
+                {
+                    <div class="h-b-2-elem">
+                        <div class="b-2-title">
+                            @braslet.Person.Nickname
+                        </div>
+                        <div class="b-2-date">
+                            @DateTime.Now.ToLocalTime().ToString("dd.MM.yy HH:mm")
+                        </div>
+                        <div class="b-2-audi">
+                            <div class="audi-left">
+                                А/Д: <span class="bold">@braslet.Person.Diastolic/@braslet.Person.Shrink</span>
+                            </div>
+                            <div class="audi-right">
+                                П:<span class="bold">@braslet.Person.Heartbeat</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="h-block-3 objects">
+        <div class="object-title">Объекты</div>
+        <div class="checkboxes">
+            <div class="checkbox-row">
+                <input type="checkbox" checked id="checkbox1">
+                <label for="checkbox1">офис ссгпо</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">промбаза ссгпо</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox3">
+                <label for="checkbox3">оф - центральная</label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox4">
+                <label for="checkbox4">
+                    куржункульский
+                    карьер
+                </label>
+            </div>
+            <div class="checkbox-row">
+                <input type="checkbox" id="checkbox5">
+                <label for="checkbox5">сарбайский карьер</label>
+            </div>
+        </div>
+
+        <div class="object-button-wrap">
+            <div class="object-button">Показать</div>
+        </div>
+
+    </div>
+    <div class="h-block-4">
+        <div class="h-b-4-title">
+            рекомендации к обследованию
+        </div>
+        <div class="h-b-4-table-wrap">
+            <table class="h-b-4-table">
+                <tr>
+                    <td>
+                        ФИО
+                    </td>
+                    <td>
+                        Аномальное АД,
+                        дней/мес
+                    </td>
+                    <td>
+                        Аном. пульс,
+                        дней/мес
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Иванов И.И.
+                    </td>
+                    <td>
+                        21
+                    </td>
+                    <td>
+                        28
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Смирнов А.В.
+                    </td>
+                    <td>
+                        20
+                    </td>
+                    <td>
+                        24
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Куанышбаев А.С.
+                    </td>
+                    <td>
+                        18
+                    </td>
+                    <td>
+                        19
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Прокофьева В.П.
+                    </td>
+                    <td>
+                        17
+                    </td>
+                    <td>
+                        14
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Вениаминов З.Н.
+                    </td>
+                    <td>
+                        14
+                    </td>
+                    <td>
+                        12
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+    <div class="h-block-5">
+        <div class="h-b-5-title">
+            Динамика за период
+        </div>
+        <img src="img/health-diagram.png">
+
+
+
+    </div>
+</div>
+

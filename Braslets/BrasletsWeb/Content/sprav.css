@@ -1,0 +1,168 @@
+
+.main-block{
+    margin-left:49px;
+
+    width:calc(100% - 347px)
+}
+
+.main-block>div{
+    background-color:#fff;
+}
+
+
+
+.main-block{
+    position:relative;
+    box-sizing:border-box;
+    padding: 23px 43px 37px 35px;
+   
+     width:calc(100% - 347px);
+    
+    background-color:white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    border-radius:7px;
+    margin-bottom:25px;
+}
+
+
+div.report, div.dropdown{
+    border-radius:5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+/*-------------------------------------------------------reports-objects--------------------------*/
+
+.clearfix {
+	clear:both;
+}
+
+.mainmenubtn {
+
+    border: none;
+    cursor: pointer;
+    padding-bottom:5px;
+}
+
+.dropdown {
+    position: relative;
+	min-width:260px;
+    display: inline-block;
+    z-index:100;
+	background:#fff;
+
+}
+.dropdown-child {
+    padding-left:17px;
+    display: none;
+    z-index:100;
+    background-color: white;
+   min-width:220px;
+    border-bottom:5px solid #ececec;
+	position:absolute;
+	z-index:100;
+}
+.dropdown-child a:hover {
+    background-color:white;
+    color:#0089a6;
+
+}
+
+
+.dropdown-child a {
+    color: black;
+    padding: 5px 24px 5px 10px;
+    text-decoration: none;
+    display: block;
+	font-size:14px;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+
+
+.ways-objects>div{
+    background-color:white;
+}
+
+.choice-object{
+    position:relative;
+    font-size:14px;
+    font-family: Roboto-Black;
+    padding-left:23px;
+    padding-top:14px;
+    padding-right:40px;
+	
+	text-transform:uppercase;
+}
+
+.choice-object>img{
+    position:absolute;
+    top:19px;
+    right:13px;
+}
+
+.main-block .title {
+	text-transform:uppercase;
+	font-size:24px;
+	font-family: Roboto-Bold;
+	float:left;
+}
+
+.main-block .sel {
+	float:right;
+}
+
+.sprav-table {
+	margin-top:30px;
+	overflow:hidden;
+	width:100%;
+}
+
+.sprav-table td.tdname {
+	width:130px;
+	
+	color:#fff;
+	font-family: Roboto-Black;
+	background:#0089A6;
+	font-size:18px;
+	text-transform:uppercase;
+	vertical-align:top;
+	
+}
+
+.sprav-table td {
+	border:2px solid #fff;
+	background:#ECECEC;
+	padding:30px;
+	vertical-align:top;
+}
+
+.sprav-table td .name {
+	font-family: Roboto-Black;
+	font-size:18px;
+	text-transform:uppercase;
+}
+
+.sprav-table td li {
+	color:#0089A6;
+}
+
+.sprav-table td ul {
+	margin-left:-20px;
+}
+
+.sprav-table td li a {
+	color:#000;
+	font-family:Roboto-Regular;
+	font-size:14px;
+	text-decoration:none;
+}
+
+.sprav-table td li a:hover {
+	text-decoration:underline;
+}
+
+ul.list2 {
+	-moz-column-count: 2; /* Для Firefox */
+    -webkit-column-count: 2; /* Для Safari и Chrome */
+    column-count: 2;
+}

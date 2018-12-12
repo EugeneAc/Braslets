@@ -104,7 +104,38 @@ namespace BrasletsWeb.Controllers
         public ActionResult Incidents()
         {
             ViewBag.AnalyticIncidents = "active";
-            return View();
+            var service = RestFetcher.Instance;
+            var model = new HomeModel();
+            model.Braslets = new List<BrasletModel>();
+
+            foreach (var device in devices)
+            {
+                var alarmData = service.GetAlarmData(_authCookie, device);
+                var brasletModel = new BrasletModel();
+                brasletModel.Person = new PersonModel();
+
+                if (alarmData != null)
+                {
+                    brasletModel.Alarms = alarmData;
+                    foreach (var alarm in brasletModel.Alarms)
+                    {
+                        if (alarm.ExceptionType == "Offline Alarm")
+                            alarm.ExceptionType = "Нет связи";
+                        if (alarm.ExceptionType == "Exit geofence")
+                            alarm.ExceptionType = "Уход с машрута";
+                        if (alarm.ExceptionType == "Abnormal blood pressure")
+                            alarm.ExceptionType = "Отклонение кровяного давления";
+                        if (alarm.ExceptionType == "Enter geofence")
+                            alarm.ExceptionType = "Возвращение на маршрут";
+                        if (alarm.ExceptionType == "SOS alarm")
+                            alarm.ExceptionType = "SOS";
+                    }
+                }
+
+                model.Braslets.Add(brasletModel);
+            }
+            ViewBag.IncidentsActive = "active";
+            return View(model);
         }
 
         public ActionResult Ways()
@@ -126,8 +157,51 @@ namespace BrasletsWeb.Controllers
                 model.Braslets.Add(brasletModel);
             }
            
-            ViewBag.AnalyticWays = "active";
+            ViewBag.WaysActive = "active";
             return View(model);
         }
+
+        public ActionResult Food()
+        {
+            return View();
+        }
+
+        public ActionResult Health()
+        {
+            ViewBag.HealthActive = "active";
+            var service = RestFetcher.Instance;
+            var model = new HomeModel();
+            model.Braslets = new List<BrasletModel>();
+            foreach (var device in devices)
+            {
+                var healthData = service.FetchHealhData(_authCookie, device);
+
+                var brasletModel = new BrasletModel();
+ 
+                brasletModel.Person = new PersonModel();
+                if (healthData != null)
+                {
+                    brasletModel.Person = healthData;
+                }
+
+                model.Braslets.Add(brasletModel);
+            }
+
+            ViewBag.DataActive = "active";
+            return View(model);
+        }
+
+        public ActionResult Reports()
+        {
+            ViewBag.ReportsActive = "active";
+            return View();
+        }
+
+        public ActionResult Sprav()
+        {
+            ViewBag.SpravActive = "active";
+            return View();
+        }
+
     }
 }

@@ -1,0 +1,250 @@
+﻿@model BrasletsWeb.Models.HomeModel
+@{
+    ViewBag.Title = "ГЛАВНАЯ / СПРАВОЧНИКИ / СТОЛОВАЯ ИТР";
+}
+<link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
+<link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
+<link href="~/Content/index.css" rel="stylesheet">
+<link href="~/Content/food.css" rel="stylesheet">
+<script src="~/Content/jquery-3.3.1.min.js"></script>
+<script src="~/Content/jquery.formstyler.js"></script>
+<script src="main.js"></script>
+
+
+        <div id="food-title">
+            Место 1: <span class="title-bold">Столовая ИТР</span>
+        </div>
+        <div id="food-main">
+            <div class="food-1">
+                <div class="f-img-wrap">
+                    <img src="img/food-map.png">
+                </div>
+                <div class="f-1-lines">
+                    <img class="f-1-img-1" src="img/food-blue.png">
+                    <span class="f-1-span-1">Границы участка</span>
+                    <img src="img/food-red.png">
+                    <span>Границы входа/выхода</span>
+                </div>
+            </div>
+            <div class="food-2">
+
+                <div class="f-2-line">
+                    <div class="f-2-elem-1">
+                        <div class="f-2-elementics">
+                            Столовая на <span class="f-2-bold">300 мест</span>
+                        </div>
+                        <div class="f-2-elementics">
+                            Площадь:  <span class="f-2-bold">180 кв. м.</span>
+                        </div>
+                        <div class="f-2-elementics">
+                            Количество сотрудников: <span class="f-2-bold">4</span>
+                        </div>
+                    </div>
+                    <div class="f-2-elem-2">
+                        <div class="f-2-2-title">
+                            Режим работы
+                        </div>
+                        <div class="f-2-elementics">
+                            ПН, ВТ, СР, ЧТ, ПТ, СБ:  <span class="f-2-bold">8:00-19:00</span>
+                        </div>
+                        <div class="f-2-elementics">
+                            ВС:<span class="f-2-bold"> выходной</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading">
+                    <div class="loading-1">
+                        Загруженность:
+                    </div>
+                    <div class="loading-elem f-2-active">
+                        пн
+                    </div>
+                    <div class="loading-elem">
+                        вт
+                    </div>
+                    <div class="loading-elem">
+                        ср
+                    </div>
+                    <div class="loading-elem">
+                        чт
+                    </div>
+                    <div class="loading-elem">
+                        пт
+                    </div>
+                    <div class="loading-elem">
+                        сб
+                    </div>
+                    <div class="loading-elem">
+                        вс
+                    </div>
+                </div>
+                <div class="f-2-img">
+                    <img src="img/food-graphic.png">
+                </div>
+            </div>
+            <div class="food-3">
+                <div class="f-3-title">
+                    посещали в неразрешенное время за период
+                </div>
+                <div class="f-3-table-wrap">
+                    <table class="f-3-table">
+                        <tr>
+                            <td>
+                                ФИО
+                            </td>
+                            <td>
+                                Отдел
+                            </td>
+                            <td>
+                                Часов
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Иванов
+                            </td>
+                            <td>
+                                Дежурные операторы
+                            </td>
+                            <td>
+                                32
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Смирнов А.В.
+                            </td>
+                            <td>
+                                Офис-менеджеры
+                            </td>
+                            <td>
+                                31
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Садыкова Е.В.
+                            </td>
+                            <td>
+                                Охрана
+                            </td>
+                            <td>
+                                18
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Куанышбаев Ж.Б.
+                            </td>
+                            <td>
+                                Дежурные операторы
+                            </td>
+                            <td>
+                                17
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Матвеева Л.К.
+                            </td>
+                            <td>
+                                Дежурные операторы
+                            </td>
+                            <td>
+                                16
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Федосеев М.П.
+                            </td>
+                            <td>
+                                Охрана
+                            </td>
+                            <td>
+                                15
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="food-4">
+                <div class="f-4-1">
+                    <div class="f-4-1-title">
+                        разрешенное время нахождения:
+                    </div>
+                    <table class="f-4-1-table">
+                        <tr>
+                            <td>
+                                дежурные операторы
+                            </td>
+                            <td>
+                                08:00-09:00, 12:00-13:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                охрана
+                            </td>
+                            <td>
+                                08:00-18:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                руководство
+                            </td>
+                            <td>
+                                08:00-18:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                администраторы
+                            </td>
+                            <td>
+                                08:00-09:00, 12:00-13:00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                офис-менеджеры
+                            </td>
+                            <td>
+                                08:00-09:00, 12:00-14:00
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="f-4-2">
+                    <div class="f-4-2-title">
+                        исключения:
+                    </div>
+                    <div class="f-4-2-elem">
+                        <span>Павлова А. С.</span>
+                        <span>старший повар</span>
+                    </div>
+                    <div class="f-4-2-elem">
+                        <span>Семенова г. И.</span>
+                        <span>техничка</span>
+                    </div>
+                    <div class="f-4-2-elem">
+                        <span>Куанышбаева А. Б.</span>
+                        <span>младший повар</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $(".loading-elem:not(f-2-active)").click(function () {
+            $(".loading-elem.f-2-active").removeClass("f-2-active");
+            $(this).addClass("f-2-active");
+        });
+    });
+</script>

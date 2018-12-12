@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eSafe</title>
+    <link href="jquery.formstyler.css" rel="stylesheet" />
+    <link href="jquery.formstyler.theme.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet">
+    <link href="sprav.css" rel="stylesheet">
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.formstyler.js"></script>
+
+	
+    <script>
+        (function($) {
+            $(function() {
+                $('#styled-select select').styler({
+                    selectSearch: true,
+                });
+            });
+        })(jQuery);
+    </script>
+
+    <script src="main.js"></script>
+</head>
+<body>
+<div id="full-body">
+    <div id="header">
+        <table id="logo">
+            <tr><td><img src="img/logo.png"><br>
+            Мониторинг и позиционирование персонала
+                <div id="styled-select">
+                    <select>
+                        <option value="ru">РУС</option>
+                        <option value="en">Eng</option>
+                        <option value="kz">Kz</option>
+                    </select>
+                </div>
+            </td></tr>
+        </table>
+        <table id="calendar">
+            <tr><td>
+                <img src="img/calendar.png">
+            </td>
+            <td>
+                <div class="top-calendar">
+                    10.10.2018
+                </div>
+                <div class="bottom-calendar">
+                    c 00:00:00 по 16.43.55
+                </div>
+            </td>
+            </tr>
+        </table>
+        <table id="user">
+            <tr><td>
+                <img src="img/user.png">
+            </td>
+                <td>
+                    <div class="top-user">
+                        Пользователь:
+                    </div>
+                    <div class="bottom-user">
+                        Константин Константинопольский
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table id="logo2">
+            <tr>
+                <td id="logo2-title">Соколовско-Сарбайское<br>
+                    горно-обогатительное <br>
+                    производственное объединение</td>
+                <td id="logo2-img">
+                    <div id="logo-img-2"><img src="img/logo2.png"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="nav-dot">
+        ГЛАВНАЯ / справочник
+    </div>
+<div id="main-block-line">
+    <div id="aside-left">
+        <a href="index.html"><div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-1.png"> <img class="img-2" src="img/img-1-white.png"></div>
+            <div class="nav-title">главная</div>
+        </div></a>
+        <a href="analytics.html"> <div class="nav-item ">
+            <div class="nav-img"><img class="img-1" src="img/img-2.png"> <img class="img-2"  src="img/img-2-white.png"></div>
+            <div class="nav-title">аналитика</div>
+        </div></a>
+        <a href="ways.html"> <div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-3.png"> <img class="img-2"  src="img/img-3-white.png"></div>
+            <div class="nav-title">маршруты</div>
+        </div></a>
+        <a href="incidents.html">  <div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-4.png"> <img class="img-2"  src="img/img-4-white.png"></div>
+            <div class="nav-title">инциденты тб</div>
+        </div></a>
+        <a href="health.html">  <div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-5.png"> <img class="img-2"  src="img/img-5-white.png"></div>
+            <div class="nav-title">здоровье</div>
+        </div></a>
+                <a href="reports.html"> <div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-6.png"> <img class="img-2"  src="img/img-6.png"></div>
+            <div class="nav-title">отчеты</div>
+        </div></a>
+        <a href="sprav.html">  <div class="nav-item active">
+            <div class="nav-img"><img class="img-1" src="img/img-7.png"> <img class="img-2"  src="img/img-7.png"></div>
+            <div class="nav-title">справочники</div>
+        </div></a>
+		<a href="#"> <div class="nav-item">
+            <div class="nav-img"><img class="img-1" src="img/img-6.png"> <img class="img-2"  src="img/img-6.png"></div>
+            <div class="nav-title">доп. инфо</div>
+        </div></a> <div class="logoastra">
+        <img class="logoimg" src="img/logoastra.png">
+        <div class="references">
+            <a href="#">www.atra-group.kz</a>
+            <a href="#">www.bm-tech.kz</a>
+            <a href="#">www.ela.kz</a>
+        </div>
+    </div>
+    </div>
+	
+	
+	<div class="main-block">
+	
+	<div class="title">Справочник</div>
+		<div class="sel">
+ <div class="dropdown">
+             <div class="choice-object mainmenubtn">
+                 ССГПО, Офис
+                 <img src="img/wide-down-arr.png">
+             </div>
+             <div class="dropdown-child">
+                 <a href="#">Группа 1</a>
+                 <a href="#">Группа 2</a>
+                 <a href="#">Группа 3</a>
+                 
+                 
+             </div>
+         </div>
+	</div>
+	<div class="clearfix"></div>
+	
+	
+	<table class="sprav-table">
+	<tr class="first">
+	<td class="tdname">Места</td>
+	<td><div class="name">прием пищи</div>
+	<ul>
+	<li><a href="food.html">Столовая ИТР</a></li>
+	<li><a href="food.html">Буфет</a></li>
+	<li><a href="food.html">Буфет цеха</a></li>
+	</ul>
+	
+	</td>
+	
+		<td><div class="name">Медицинские</div>
+	<ul>
+	<li><a href="food.html">Стоматологический кабинет</a></li>
+	<li><a href="food.html">Мед. пункт АБК</a></li>
+	<li><a href="food.html">Мед. пункт цеха</a></li>
+	</ul>
+	
+	</td>
+	
+	
+	
+	
+		<td style="width:25%"><div class="name">Рабочие</div>
+	<ul class="list2">
+	<li><a href="food.html">Гараж</a></li>
+	<li><a href="food.html">Офисы ПТО</a></li>
+	<li><a href="food.html">Офисы ТБ</a></li>
+	<li><a href="food.html">Руководители</a></li>
+	<li><a href="food.html">Цех связи</a></li>
+	<li><a href="food.html">Электроцех</a></li>
+	<li><a href="food.html">Карьер</a></li>
+	<li><a href="food.html">Дорога карьера</a></li>
+	<li><a href="food.html">Склад ГСМ</a></li>
+	</ul>
+	
+	</td>
+	
+			<td><div class="name">Отдых</div>
+	<ul>
+	<li><a href="food.html">Раздевалка 1</a></li>
+	<li><a href="food.html">Раздевалка 2</a></li>
+	<li><a href="food.html">Фойе АБК</a></li>
+	
+	</ul>
+	
+	</td>
+	
+	
+	</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+	<tr>
+	<td class="tdname">Персонал</td>
+	<td>
+	<ul>
+	<li><a href="food.html">ИТР</a></li>
+
+	</ul>
+	
+	</td>
+	
+		<td>
+	<ul>
+	<li><a href="food.html">Руководители</a></li>
+	
+	</ul>
+	
+	</td>
+	
+	
+	
+	
+		<td style="width:20%;">
+	<ul>
+	<li><a href="food.html">Административный персонал</a></li>
+	
+	</ul>
+	
+	</td>
+	
+			<td>
+	<ul>
+
+	<li><a href="food.html">Рабочие</a></li>
+	
+	</ul>
+	
+	</td>
+	
+	
+	</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<tr>
+	<td class="tdname">Маршруты</td>
+	<td  colspan="2"><div class="name">Люди</div>
+	<ul>
+	<li><a href="food.html">Рабочие эл. цеха</a></li>
+	<li><a href="food.html">Рабочие</a></li>
+	<li><a href="food.html">Оператор экскаватора</a></li>
+	</ul>
+	
+	</td>
+	
+		<td colspan="2"><div class="name">Транспорт</div>
+	<ul>
+	<li><a href="food.html">Больдозер САТ № 331</a></li>
+	<li><a href="food.html">Погрузчик Komatsu № 122</a></li>
+	<li><a href="food.html">Легковой TLC 100 № 08 614 HFA</a></li>
+	</ul>
+	
+	</td>
+	
+	
+	
+	
+
+
+	
+	
+	</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<tr>
+	<td class="tdname">Разрешения и лимиты</td>
+	<td><div class="name">запрещенные зоны</div>
+	<ul>
+	<li><a href="food.html">Склад ГСМ</a></li>
+	<li><a href="food.html">Открытый склад</a></li>
+	<li><a href="food.html">ОРУ</a></li>
+	</ul>
+	
+	</td>
+	
+		<td><div class="name">опасные зоны</div>
+	<ul>
+	<li><a href="food.html">ТП 6/0,4 КВ</a></li>
+	<li><a href="food.html">ТП 110/6 КВ</a></li>
+	<li><a href="food.html">АЗС</a></li>
+	</ul>
+	
+	</td>
+	
+	
+	
+	
+		<td><div class="name">границы</div>
+	<ul>
+	<li><a href="food.html">Карьер</a></li>
+	<li><a href="food.html">Парковка</a></li>
+	<li><a href="food.html">Предприятие</a></li>
+	<li><a href="food.html">Территория АБК</a></li>
+	
+	</ul>
+	
+	</td>
+	
+			<td><div class="name">места пр.</div>
+	<ul>
+	<li><a href="food.html">Буфет</a></li>
+	<li><a href="food.html">Буфет цеха</a></li>
+	<li><a href="food.html">Место 1</a></li>
+	<li><a href="food.html">Место 2</a></li>
+	
+	</ul>
+	
+	</td>
+	
+	
+	</tr>
+	
+	
+	
+	
+	
+	
+	</table>
+	
+	
+	
+	</div>
+	
+	
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

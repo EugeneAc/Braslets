@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>eSafe</title>
-    <link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
-    <link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
-    <link href="~/Content/index.css" rel="stylesheet">
-    <link href="~/Content/analytics.css" rel="stylesheet">
-    <link href="~/Content/ways.css" rel="stylesheet">
-    <link href="~/Content/incidents.css" rel="stylesheet" />
+
     <script src="~/Content/jquery-3.3.1.min.js"></script>
     <script src="~/Content/jquery.formstyler.js"></script>
-    @Styles.Render("~/Content/css")
+    <script src="~/Content/js/moment.min.js"></script>
+    <script src="~/Content/js/daterangepicker.js"></script>
     <script>
         (function ($) {
             $(function () {
@@ -71,6 +67,7 @@
                     </td>
                 </tr>
             </table>
+
             <table id="logo2">
                 <tr>
                     <td id="logo2-title">
@@ -83,9 +80,11 @@
                     </td>
                 </tr>
             </table>
+            
         </div>
         <div id="nav-dot">
             @ViewBag.Title
+            <input type="checkbox" id="refreshcheckbox" style="margin-left: 50px;">Автообновление<br>
         </div>
         <div id="main-block-line">
             <div id="aside-left">
@@ -102,36 +101,87 @@
                     </div>
                 </a>
                 <a href="ways">
-                    <div class="nav-item">
-                        <div class="nav-img @ViewBag.WaysActive"><img src="img/img-3.png"></div>
+                    <div class="nav-item @ViewBag.WaysActive">
+                        <div class="nav-img "><img src="img/img-3.png"></div>
                         <div class="nav-title">маршруты</div>
                     </div>
                 </a>
                 <a href="incidents">
-                    <div class="nav-item">
-                        <div class="nav-img @ViewBag.IncidentsActive"><img src="img/img-4.png"></div>
+                    <div class="nav-item  @ViewBag.IncidentsActive">
+                        <div class="nav-img"><img src="img/img-4.png"></div>
                         <div class="nav-title">инциденты тб</div>
                     </div>
                 </a>
-                    <div class="nav-item">
-                        <div class="nav-img"><img src="img/img-5.png"></div>
+                <a href="health">
+                    <div class="nav-item @ViewBag.HealthActive">
+                        <div class="nav-img "><img src="img/img-5.png"></div>
                         <div class="nav-title">здоровье</div>
                     </div>
-                    <a href="Data">
-                        <div class="nav-item @ViewBag.DataActive">
-                            <div class="nav-img"><img src="img/img-6.png"></div>
-                            <div class="nav-title">отчеты</div>
-                        </div>
-                    </a>
-                    <div class="nav-item">
+                </a>
+                <a href="reports">
+                    <div class="nav-item @ViewBag.ReportsActive">
+                        <div class="nav-img"><img src="img/img-6.png"></div>
+                        <div class="nav-title">отчеты</div>
+                    </div>
+                </a>
+                <a href="sprav">
+                    <div class="nav-item @ViewBag.SpravActive">
                         <div class="nav-img"><img src="img/img-7.png"></div>
                         <div class="nav-title">справочники</div>
                     </div>
+                </a>
+                <a href="#">
+                    <div class="nav-item">
+                        <div class="nav-img"><img class="img-1" src="img/img-6.png"> <img class="img-2" src="img/img-6.png"></div>
+                        <div class="nav-title">доп. инфо</div>
+                    </div>
+                </a> <div class="logoastra">
+                    <img class="logoimg" src="img/logoastra.png">
+                    <div class="references">
+                        <a href="#">www.atra-group.kz</a>
+                        <a href="#">www.bm-tech.kz</a>
+                        <a href="#">www.ela.kz</a>
+                    </div>
+                </div>
             </div>
-        @RenderBody()
+
+            @RenderBody()
+        </div>
     </div>
-</div>
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).ready(function () {
+            if (getCookie("refreshcheckbox") === "1") {
+                $("#refreshcheckbox").prop('checked', true);
+                setTimeout(function () {
+                    window.location.href = window.location.href;
+                }, 60000); // время в мс
+            }
+        });
+        $('#refreshcheckbox').click(function () {
+            if (this.checked) {
+                setCookie("refreshcheckbox", 1);
+                setTimeout(function () {
+                    window.location.href = window.location.href;
+                }, 60000); // время в мс
+            }
+            else {
+                setCookie("refreshcheckbox", 0);
+            }
+        }) 
+
+        function setCookie(key, value) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+            document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+        }
+
+        function getCookie(key) {
+            var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+            return keyValue ? keyValue[2] : null;
+        }
+    </script>
+
 </body>
+
 </html>

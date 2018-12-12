@@ -124,7 +124,7 @@ div.inci-block-1{
     border-collapse: collapse;
     border-spacing: 0;
     width:calc(100% - 33px);
-    min-width:520px;
+    /*min-width:520px;*/
     margin-right:33px;
     font-size:14px;
 

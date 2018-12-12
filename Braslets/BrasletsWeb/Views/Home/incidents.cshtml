@@ -1,7 +1,20 @@
 ﻿@model BrasletsWeb.Models.HomeModel
-    @{
-        ViewBag.Title = "ГЛАВНАЯ/ИНЦИДЕНТЫ ТБ";
-    }
+@{
+    ViewBag.Title = "ГЛАВНАЯ/ИНЦИДЕНТЫ ТБ";
+}
+<link href="~/Content/jquery.formstyler.css" rel="stylesheet" />
+<link href="~/Content/jquery.formstyler.theme.css" rel="stylesheet" />
+<link href="~/Content/index.css" rel="stylesheet">
+<link href="~/Content/analytics.css" rel="stylesheet">
+<link href="~/Content/ways.css" rel="stylesheet">
+<link href="~/Content/health.css" rel="stylesheet">
+<link href="~/Content/reports.css" rel="stylesheet">
+<link href="~/Content/incidents.css" rel="stylesheet">
+<link href="~/Content/sprav.css" rel="stylesheet">
+<link href="~/Content/food.css" rel="stylesheet">
+<link href="~/Content/incidents.css" rel="stylesheet" />
+<script src="~/Content/jquery-3.3.1.min.js"></script>
+<script src="~/Content/jquery.formstyler.js"></script>
 <div class="inci-main">
     <div class="inci-block-1">
         <div class="inci-block-1-1">
@@ -162,91 +175,24 @@
             инциденты тб
         </div>
         <table class="inci-3-table">
-            <tr class="tr-title">
-                <td>
-                    №
-                </td>
-                <td>
-                    ФИО
-                </td>
-                <td>
-                    Время
-                </td>
-                <td>
-                    Нарушение
-                </td>
+            <tr class="trevogi-table-head">
+                <td></td>
+                <td style="min-width: 100px;">Время обнаружения</td>
+                <td style="min-width: 100px;">ФИО</td>
+                <td>Тип события</td>
             </tr>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Иванов И.И.
-                </td>
-                <td>
-                    11.12.2018  08:10
-                </td>
-                <td>
-                    Потеря сознания
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Смирнов А.В.
-                </td>
-                <td>
-                    10.12.2018  16:22
-                </td>
-                <td>
-                    Падение
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    3
-                </td>
-                <td>
-                    Куанышбаев А.С.
-                </td>
-                <td>
-                    10.12.2018  12:56
-                </td>
-                <td>
-                    Опасное превышение
-                    А/Д
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    4
-                </td>
-                <td>
-                    Иванов И.И.
-                </td>
-                <td>
-                    10.12.2018  11:08
-                </td>
-                <td>
-                    Потеря сознания
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    5
-                </td>
-                <td>
-                    Смирнов А.В.
-                </td>
-                <td>
-                    10.12.2018  10:31
-                </td>
-                <td>
-                    Падение
-                </td>
-            </tr>
+            <tbody>
+                @foreach (var alarm in Model.Braslets.SelectMany(s => s.Alarms).OrderByDescending(t => t.ExceptionTime).Take(6))
+                {
+
+                    <tr>
+                        <td></td>
+                        <td>@alarm.LocatingTime.ToLocalTime()</td>
+                        <td>@alarm.DeviceName</td>
+                        <td>@alarm.ExceptionType</td>
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
     <div class="inci-block-5">

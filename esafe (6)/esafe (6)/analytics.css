@@ -1,0 +1,377 @@
+.grid-big{
+    display:grid;
+    max-width:1566px;
+    margin-left:48px;
+    width:calc(100% - 347px);
+    grid-template-columns: minmax(420px,6.67fr) minmax(auto,5.18fr) 295px;
+    grid-template-rows:460px 364px;
+    grid-gap:26px;
+}
+
+.grid-big>div{
+    background-color:white;
+
+}
+
+div.round-diagrams, div.percents-before, div.percents{
+    box-shadow: none;
+}
+.round-diagrams>div, .grid-big>div, .percents>div{
+    border-radius:5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+.percents-before{
+    margin-right:19px;
+}
+.diagram-3{
+    grid-column:2/4;
+}
+.trevogi{
+    padding-left:25px;
+    padding-top:27px;
+    padding-right:31px;
+    overflow-x:auto;
+}
+
+.trevogi-title{
+    font-size:18px;
+    font-family:Roboto-Black;
+    margin-bottom:25px;
+    text-transform: uppercase;
+}
+.trevogi-table{
+    width:100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+    min-width:500px;
+
+}
+
+.trevogi-table td{
+    vertical-align: middle;
+    font-size:14px;
+
+    height:30px;
+    border:none;
+
+}
+.trevogi-table td:first-child{
+    padding-left:9px;
+}
+.trevogi-table .trevogi-table-head td{
+    padding-left:0;
+}
+
+.trevogi-table-head{
+    color:#696969;
+}
+.trevogi-table tr:nth-child(even){
+    background-color:#ececec;
+
+}
+
+/*------------------------------------------percents-------------------------*/
+
+div.percents-before{
+    overflow-x:auto;
+}
+div.percents{
+    background-color:#ececec;
+    display:grid;
+    height:100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 200px;
+    grid-gap:13px;
+    min-width:520px;
+
+}
+
+
+.percents>div{
+    background-color:white;
+    padding-left:20px;
+    padding-top:20px;
+}
+
+div.percents-5{
+    grid-column:2/4;
+    padding-top:0;
+    padding-right:33px;
+}
+.percents-5 table{
+    height:100%;
+    width:100%;
+
+}
+
+.percents-5-percent{
+    width:110px;
+    text-align:right;
+    font-size:37px;
+    font-family:Roboto-Bold;
+    color:#2e9500;
+
+}
+
+.percents-5-title{
+    font-size:18px;
+    color:#7a7a7a;
+    font-family:Roboto-Black;
+    text-transform: uppercase;
+}
+.percents-5 table td{
+    vertical-align: middle;
+}
+
+
+.percents-title{
+    text-transform: uppercase;
+    font-size:14px;
+    font-family:Roboto-Black;
+    color:#7a7a7a;
+    height:50px;
+
+}
+.percents-1-count{
+    font-size:20px;
+    font-family:Roboto-Bold;
+}
+
+.percents-1-gray{
+    color:#777777;
+}
+.percents-count{
+    font-size:20px;
+    font-family:Roboto-Bold;
+}
+
+.percents-6{
+    grid-column:1/4;
+}
+
+
+.percents-6-grid-table{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:20px;
+
+}
+
+
+.percents-bold-title{
+    font-size:18px;
+    font-family:Roboto-Black;
+    margin-bottom:23px;
+    text-transform: uppercase;
+}
+.persents-6-tables-1,.persents-6-tables-2{
+    font-family:Roboto-Medium;
+    font-size:14px;
+    padding-right:30px;
+    color:#696969;
+}
+
+.persents-6-tables-1 td:nth-child(2),.persents-6-tables-2 td:nth-child(2){
+    color:black;
+    font-family:Roboto-Black;
+}
+
+.persents-6-tables-1,.persents-6-tables-2{
+    font-size:14px;
+    padding-right:30px;
+}
+
+.persents-6-result{
+    height:38px;
+    font-size:16px;
+    font-family:Roboto-Black;
+    text-transform: uppercase;
+}
+
+.persents-6-result td{
+    vertical-align: bottom;
+}
+
+.persents-6-result-value{
+    font-size:24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+div.round-diagrams{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-gap:15px;
+    background-color:#ececec;
+}
+
+
+.round-diagrams>div{
+    background-color:white;
+}
+
+
+/*---------------------------------------------------objects------------------------------------*/
+.object-title{
+    margin-top:35px;
+    margin-bottom:45px;
+    font-size:18px;
+    text-transform: uppercase;
+    text-align:center;
+    font-family:Roboto-Bold;
+}
+.checkboxes{
+    padding-left:44px;
+    padding-right:18px;
+    margin-bottom:35px;
+}
+.checkbox-row{
+    cursor:pointer;
+    font-size:14px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+   font-family:Roboto-Black;
+}
+.checkboxes input+label{
+    cursor: pointer;
+}
+.checkboxes input[type="checkbox"]:checked,
+.checkboxes input[type="checkbox"]:not(:checked){
+    position:absolute;
+    left:-9999px;
+}
+
+.checkboxes input[type="checkbox"]:checked+label,
+.checkboxes input[type="checkbox"]:not(:checked)+label{
+    display:inline-block;
+    position:relative;
+    padding-left:28px;
+    line-height:20px;
+
+}
+.checkboxes input[type="checkbox"]:checked+label{
+    color:black;
+     background:url("img/checked.png") 0 0 no-repeat;
+ }
+.checkboxes input[type="checkbox"]:not(:checked)+label{
+    color:#6f6f6f;
+    background:url("img/nonchecked.png") 0 0 no-repeat;
+}
+
+.object-button-wrap{
+    padding-left:44px;
+    padding-right:48px;
+
+}
+
+.object-button{
+    text-align:center;
+    padding-top:12px;
+    padding-bottom:12px;
+    color:white;
+    cursor:pointer;
+    background-color:#0089a6;
+    font-size:14px;
+    font-family:Roboto-Black;
+    text-transform: uppercase;
+}
+@media screen and (max-width:1400px){
+
+    .checkboxes{
+        padding-left:25px;
+
+    }
+
+    .object-button-wrap{
+
+        padding-right:28px;
+    }
+    .grid-big{
+        grid-template-columns: 380px 1fr 235px;
+
+    }
+}
+/*-------------------------------------------------diagram-3-----------------------------------------*/
+.diagram-3{
+    width:100%;
+}
+.diagram-image{
+    margin-top:32px;
+    text-align:center;
+    margin-bottom:12px;
+}
+
+
+.color-title{
+    color:#696969;
+    font-size:14px;
+    font-family:Roboto-Medium;
+}
+
+.color-title>img{
+    margin-left:28px;
+    margin-right:8px;
+}
+
+.diagram-3-image{
+    width:100%;
+    margin-top:47px;
+    padding-bottom:20px;
+    overflow-x:auto;
+}
+
+.diagram-3-image-wrap{
+    width:862px;
+}
+
+.diagram-3-text{
+    overflow-y:hidden;
+    margin-top:20px;
+    font-family:Roboto-Medium;
+    font-size:14px;
+    padding-left:45px;
+}
+
+.dia3-img{
+    float:left;
+    margin-top:5px;
+    margin-right:31px;
+}
+
+.dia3-img>img{
+    margin-right:6px;
+}
+
+/*
+::-webkit-scrollbar
+{
+    height:6px;
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #555555;
+    border: 2px solid #555555;
+}
+
+*/
+
+@media screen and (max-width:1700px){
+    .percents-before{
+        margin-right:0;
+    }
+}
+
